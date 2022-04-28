@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/Repo2/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh/Temp/app/src/main/res/layout/activity_login.xml" value="0.2203125" />
+        <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/GitRepo/ErstesProjekt/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/GitRepo/ErstesProjekt/app/src/main/res/layout/activity_login_refused.xml" value="0.33" />
+        <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/GitRepo/ErstesProjekt/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/GitRepo/ErstesProjekt/app/src/main/res/layout/activity_welcome_back.xml" value="0.33" />
         <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/Temp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/alexg/Desktop/Studium/Module/4Softwarepraktikum/Temp/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>

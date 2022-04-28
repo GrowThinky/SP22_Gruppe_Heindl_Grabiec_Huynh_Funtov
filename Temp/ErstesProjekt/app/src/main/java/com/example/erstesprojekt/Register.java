@@ -17,13 +17,16 @@ public class Register extends AppCompatActivity {
 
     //Button um sich zu Regestrieren
     public void buttonSignUp(View view){
-        EditText textfieldBenutzername = findViewById(R.id.txt_benutername);
+        EditText textfieldBenutzername = findViewById(R.id.txt_benutername1);
         String benutzername = textfieldBenutzername.getText().toString();
-        EditText textfieldPassword = findViewById(R.id.txt_password);
-        String password = textfieldBenutzername.getText().toString();
+
+        EditText textfieldPassword = findViewById(R.id.txt_password1);
+        String password = textfieldPassword.getText().toString();
+
 
         //Starte Login Activity
         Intent loginClass = new Intent(this, Login.class);
+
         loginClass.putExtra("benutzername", benutzername);
         loginClass.putExtra("password", password);
         startActivity(loginClass);
