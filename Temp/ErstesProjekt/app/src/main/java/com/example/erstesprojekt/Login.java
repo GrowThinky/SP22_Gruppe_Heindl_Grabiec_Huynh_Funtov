@@ -55,9 +55,10 @@ public class Login extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
             passwordInDatenbank = data.getStringExtra("password");
+        System.out.print("Hallo");
     }
 
-
+//testCommit
 
 
 }
