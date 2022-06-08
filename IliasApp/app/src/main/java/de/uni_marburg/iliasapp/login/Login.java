@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import de.uni_marburg.iliasapp.MainActivity;
+import de.uni_marburg.iliasapp.MainActivity2;
 import de.uni_marburg.iliasapp.R;
 import de.uni_marburg.iliasapp.databinding.ActivityLoginBinding;
 
@@ -70,7 +71,7 @@ public class Login extends AppCompatActivity {
     private void updateUiWithUser(LoggedInUser user) {
         String welcome = getString(R.string.welcome) + " " + user.getDisplayName();
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-        Intent moveToHome = new Intent(this, MainActivity.class);
+        Intent moveToHome = new Intent(this, MainActivity2.class);
         startActivity(moveToHome);
 
     }
