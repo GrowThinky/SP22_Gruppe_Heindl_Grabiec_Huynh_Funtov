@@ -1,14 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/allFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="All"
+            android:backgroundTint="#3F51B5"
+            android:onClick="allFilterTrapped"/>
+
+        <Button
+            android:id="@+id/MoFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mo"
+            android:backgroundTint="#3F51B5"
+            android:onClick="MoFilterTrapped"/>
+
+        <Button
+            android:id="@+id/DiFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Di"
+            android:backgroundTint="#3F51B5"
+            android:onClick="DiFilterTrapped"/>
+
+        <Button
+            android:id="@+id/MiFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mi"
+            android:backgroundTint="#3F51B5"
+            android:onClick="MiFilterTrapped"/>
+
+        <Button
+            android:id="@+id/DoFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Do"
+            android:backgroundTint="#3F51B5"
+            android:onClick="DoFilterTrapped"/>
+
+        <Button
+            android:id="@+id/FrFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Fr"
+            android:backgroundTint="#3F51B5"
+            android:onClick="FrFilterTrapped"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/VorlesungFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="VL"
+            android:backgroundTint="#3F51B5"
+            android:onClick="VLFilterTrapped"/>
+
+        <Button
+            android:id="@+id/ÜbungFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ÜB"
+            android:backgroundTint="#3F51B5"
+            android:onClick="ÜBFilterTrapped"/>
+
+        <Button
+            android:id="@+id/SeminarFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#3F51B5"
+            android:onClick="SEFilterTrapped"
+            android:text="SE" />
+
+        <Button
+            android:id="@+id/AktuellFilter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#3F51B5"
+            android:onClick="AktuellFilterTrapped"
+            android:text="Aktuell"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+
+
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
+
+</LinearLayout>

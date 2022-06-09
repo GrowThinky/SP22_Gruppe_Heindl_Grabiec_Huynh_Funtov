@@ -38,6 +38,9 @@ android {
         exclude group: "com.google.guava", module: "listenablefuture:1.0"
     }
 */
+    aaptOptions {
+        cruncherEnabled = false
+    }
 }
 
 dependencies {

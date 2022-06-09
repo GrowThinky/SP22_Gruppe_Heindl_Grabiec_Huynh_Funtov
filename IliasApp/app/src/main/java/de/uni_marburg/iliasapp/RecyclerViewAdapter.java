@@ -37,7 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         Modul modul = mData.get(position);
         holder.nameTextView.setText(modul.name);
-        holder.timeTextView.setText(modul.tag + "  " +modul.startTime +  " - " + modul.endTime );
+        holder.timeTextView.setText(modul.tag + "  " +modul.startTime +  " - " + modul.endTime + " " + modul.dozent );
     }
 
     // total number of rows
