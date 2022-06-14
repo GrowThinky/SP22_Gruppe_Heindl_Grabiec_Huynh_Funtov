@@ -54,18 +54,25 @@ public class LoginDataSource {
 
         } catch (Exception e) {
             System.out.println(e.getClass() + e.getMessage());
+            return new LoginResult.Error(new IOException("Error logging in"));
 
         }
-        //move this back into catch block above, when done
-        return new LoginResult.Error(new IOException("Error logging in"));
+        return new LoginResult.Success<>(getFakeUser());
     }
 
-    
+
 
     public void logout() {
 
         // TODO: revoke authentication
     }
 
+    public LoginResult getFakeUser() {
+        LoggedInUser fakeUser =
+                new LoggedInUser(
+                        java.util.UUID.randomUUID().toString(),
+                        "user_name");
+        return new LoginResult.Success<>(fakeUser);
 
+    }
 }
