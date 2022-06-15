@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IliasApp">
         <activity
+            android:name=".Kalender"
+            android:exported="false" />
+        <activity
             android:name=".RaumDetails"
             android:exported="false" />
         <activity
