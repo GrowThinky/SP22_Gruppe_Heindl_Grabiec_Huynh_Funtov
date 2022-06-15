@@ -23,4 +23,10 @@ public class HomeScreen extends AppCompatActivity {
 
         startActivity(veranstaltungsplanClass);
     }
+
+    public void buttonRaumplan(View view) {
+        // Startet Raumsuche (Raumsuche)
+        Intent raumsuche = new Intent(this, Raumsuche.class);
+        startActivity(raumsuche);
+    }
 }
