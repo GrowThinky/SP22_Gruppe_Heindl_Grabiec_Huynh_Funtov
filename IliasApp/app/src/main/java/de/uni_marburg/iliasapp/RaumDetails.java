@@ -36,6 +36,18 @@ public class RaumDetails extends AppCompatActivity {
         raumNr.setText("Raum: " + raum);
         TextView adresseVomRaum = findViewById(R.id.adresse);
         adresseVomRaum.setText("Adresse: " + adresse);
+
+        // Liste mit Modulen die in dem gesuchten Raum stattfinden
+        List<Modul> raumBelegung = Lists.newArrayList();
+        for(Modul m : MainActivity.modulListe) {
+            if (m.getRaum().contains(raum)) {
+                raumBelegung.add(m);
+            }
+        }
+        RecyclerView raum_belegt = findViewById(R.id.raum_belegt);
+        raum_belegt.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, raumBelegung);
+        raum_belegt.setAdapter(adapter);
     }
 
     // Zeigt den Raum auf Google Maps an

@@ -9,8 +9,8 @@
     <TextView
         android:id="@+id/raum_nr"
         android:layout_width="300dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +19,8 @@
     <TextView
         android:id="@+id/adresse"
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +34,28 @@
         android:onClick="aufMapsAnzeigen"
         android:text="@string/maps_anzeigen"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raum_belegt" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/raum_belegt"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raumplan" />
+
+    <TextView
+        android:id="@+id/raumplan"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/raumplan"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adresse" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

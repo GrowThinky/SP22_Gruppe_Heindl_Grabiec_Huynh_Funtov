@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
-    ArrayList<Modul> modulListe = new ArrayList<>();
+    static ArrayList<Modul> modulListe = new ArrayList<>();
 
     private Button filterButton;
     private Button moButton, diButton, miButton, doButton, frButton, allButton, üBButton, vLButton, sEButton;
