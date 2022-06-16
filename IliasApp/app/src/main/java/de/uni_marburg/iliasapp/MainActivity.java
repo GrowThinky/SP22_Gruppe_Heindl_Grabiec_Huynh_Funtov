@@ -1,5 +1,6 @@
 package de.uni_marburg.iliasapp;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
     static ArrayList<Modul> modulListe = new ArrayList<>();
+
 
     private Button filterButton;
     private Button moButton, diButton, miButton, doButton, frButton, allButton, üBButton, vLButton, sEButton;
@@ -139,19 +141,21 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     cells.get(0).text(),
                     cells.get(1).text(),
                     cells.get(2).text(),
+                    cells.get(7).text(),
                     cells.get(10).text(),
                     cells.get(11).text(),
                     cells.get(12).text(),
                     cells.get(16).text(),
                     cells.get(19).text()));
+
         }
     }
 
     /**
      * Generates a Modul instance
      */
-    public Modul makeModul(String id, String name, String form, String tag, String von, String bis, String raum, String dozent) {
-        return new Modul(id, name, form, tag, von, bis, raum, dozent);
+    public Modul makeModul(String id, String name, String form, String semester, String tag, String von, String bis, String raum, String dozent) {
+        return new Modul(id, name, form, semester, tag, von, bis, raum, dozent);
     }
 
 

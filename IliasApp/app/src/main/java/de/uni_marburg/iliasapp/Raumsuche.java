@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 
 public class Raumsuche extends AppCompatActivity {
     private List<Gebaeude> gebaeude;
+    private String raumindata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +35,24 @@ public class Raumsuche extends AppCompatActivity {
                 add(new Gebaeude("3071", "Hans-Meerwein-Straße 8, 35032 Marburg", "50.80981", "8.80975"));
             }
         };
+
+        raumindata = getIntent().getStringExtra("raum");
     }
 
     public void raumsucheStarten(View view) {
+        String raum;
+        String raumNr;
         EditText editText = findViewById(R.id.raumsuche);
-        String raum = editText.getText().toString();
-        String raumNr = raum.substring(0, 4);
+        if (editText.equals(null)){
+            raum = raumindata;
+            System.out.println(raumindata);
+            raumNr = raum.substring(0, 4);
+        }
+        else {
+            raum = editText.getText().toString();
+            raumNr = raum.substring(0, 4);
+        }
+
         Iterator iterator = gebaeude.iterator();
         boolean isExists = false;
 
@@ -49,7 +63,7 @@ public class Raumsuche extends AppCompatActivity {
                 isExists = true;
                 Intent intent = new Intent(this, RaumDetails.class);
                 intent.putExtra("raum", raum);
-                intent.putExtra("adresse", tmp.getAdresse());
+                intent.putExtra("adressadresse", tmp.getAdresse());
                 intent.putExtra("breitengrad", tmp.getBreitengrad());
                 intent.putExtra("laengengrad", tmp.getLaengengrad());
                 startActivity(intent);

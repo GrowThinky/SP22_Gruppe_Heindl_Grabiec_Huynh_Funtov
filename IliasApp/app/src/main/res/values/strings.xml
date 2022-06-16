@@ -24,8 +24,10 @@
     <string name="meine_veranstaltungen">Meine Veranstaltungen</string>
     <string name="veranstaltungsplan">Veranstaltungsplan</string>
     <string name="campus_app">Campus App</string>
-
-    <string name="room_search">Raum Suche</string>
+    <string name="veranstaltungs_details">Veranstaltungsdetails</string>
+    <string name="maps_anzeigen">Maps anzeigen</string>
+    <string name="room_search">Raum suchen</string>
     <string name="search">Suche</string>
-    <string name="maps_anzeigen">Auf Maps anzeigen</string>
+    <string name="raumdetails">Raumdetails</string>
+    />
 </resources>

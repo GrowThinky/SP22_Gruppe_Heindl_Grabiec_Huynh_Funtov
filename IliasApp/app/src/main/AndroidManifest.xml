@@ -21,7 +21,15 @@
             android:name=".Raumsuche"
             android:exported="false" />
         <activity
-            android:name=".HomeScreen"
+            android:name=".VeranstaltungsDetails"
+            android:exported="false"
+            android:label="@string/veranstaltungs_details"/>
+        <activity
+            android:name=".MeineVeranstaltungen"
+            android:exported="false"
+            android:label="@string/meine_veranstaltungen"/>
+        <activity
+            android:name=".view.HomeScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
