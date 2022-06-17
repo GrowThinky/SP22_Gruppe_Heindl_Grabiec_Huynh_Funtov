@@ -63,9 +63,8 @@ public class VeranstaltungsDetails extends AppCompatActivity {
     public void buttonRaumdetails(View view) {
 
         //Starte Raumdetails
-        Intent detailsraumdplanClass = new Intent(this, RaumDetails.class);
-        detailsraumdplanClass.putExtra("raum", raumInData);
-
+        Intent detailsraumdplanClass = new Intent(this, Raumsuche.class);
+        detailsraumdplanClass.putExtra("raum_2", raumInData);
         startActivity(detailsraumdplanClass);
     }
 

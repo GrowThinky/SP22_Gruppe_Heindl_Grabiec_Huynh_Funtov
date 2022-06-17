@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Raumsuche extends AppCompatActivity {
     private List<Gebaeude> gebaeude;
-    private String raumindata;
+    private String raumInData_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +36,16 @@ public class Raumsuche extends AppCompatActivity {
             }
         };
 
-        raumindata = getIntent().getStringExtra("raum");
+        raumInData_2 = getIntent().getStringExtra("raum_2");
+        EditText editTextRaum = findViewById(R.id.raumsuche);
+        editTextRaum.setText(raumInData_2);
     }
 
     public void raumsucheStarten(View view) {
         String raum;
-        String raumNr;
         EditText editText = findViewById(R.id.raumsuche);
-        if (editText.equals(null)){
-            raum = raumindata;
-            System.out.println(raumindata);
-            raumNr = raum.substring(0, 4);
-        }
-        else {
-            raum = editText.getText().toString();
-            raumNr = raum.substring(0, 4);
-        }
-
+        raum = editText.getText().toString();
+        String raumNr = raum.substring(0, 4);
         Iterator iterator = gebaeude.iterator();
         boolean isExists = false;
 
@@ -63,7 +56,7 @@ public class Raumsuche extends AppCompatActivity {
                 isExists = true;
                 Intent intent = new Intent(this, RaumDetails.class);
                 intent.putExtra("raum", raum);
-                intent.putExtra("adressadresse", tmp.getAdresse());
+                intent.putExtra("adresse", tmp.getAdresse());
                 intent.putExtra("breitengrad", tmp.getBreitengrad());
                 intent.putExtra("laengengrad", tmp.getLaengengrad());
                 startActivity(intent);

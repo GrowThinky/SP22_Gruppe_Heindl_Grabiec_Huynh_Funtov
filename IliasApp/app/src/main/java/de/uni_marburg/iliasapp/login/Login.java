@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import de.uni_marburg.iliasapp.view.HomeScreen;
+import de.uni_marburg.iliasapp.data.HomeScreen;
 import de.uni_marburg.iliasapp.R;
 import de.uni_marburg.iliasapp.databinding.ActivityLoginBinding;
 

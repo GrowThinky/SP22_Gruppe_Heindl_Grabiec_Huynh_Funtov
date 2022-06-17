@@ -29,5 +29,7 @@
     <string name="room_search">Raum suchen</string>
     <string name="search">Suche</string>
     <string name="raumdetails">Raumdetails</string>
+    <string name="raum_suche">Raumsuche</string>
+    <string name="raum_details">Raumdetails</string>
     />
 </resources>

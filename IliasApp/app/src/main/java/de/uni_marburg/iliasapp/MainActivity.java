@@ -25,6 +25,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import de.uni_marburg.iliasapp.data.HomeScreen;
+
 //import org.apache.poi.ss.usermodel.Workbook;
 //import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 // html webscrapper // jsoup  txt
@@ -33,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
-    static ArrayList<Modul> modulListe = new ArrayList<>();
-
 
     private Button filterButton;
     private Button moButton, diButton, miButton, doButton, frButton, allButton, üBButton, vLButton, sEButton;
@@ -60,31 +60,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         ArrayList<String> results = new ArrayList<>();
 
 
-        AssetManager assetManager = getAssets();
-        InputStream inputStream = null;
-        Document doc = null;
-
-        try {
-            inputStream = assetManager.open("data.xls");
-            doc = Jsoup.parse(inputStream, "UTF-8", "http://example.com/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        Elements rows = doc.getElementsByTag("Row");
-        rows.remove(0);
-        int nrRows = rows.size();
-        int nrColumns = rows.get(0).getElementsByTag("Cell").size();
-
-        //set up list containing modul infos
-        setUpModulListe(rows);
-
-
         // set up the RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(this, modulListe);
+        adapter = new RecyclerViewAdapter(this, HomeScreen.modulListe);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
     }
@@ -105,8 +84,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         lookUnSelected(üBButton);
         lookUnSelected(vLButton);
         lookUnSelected(sEButton);
-
-
     }
 
     private void lookSelected(Button parsedButton) {
@@ -129,33 +106,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         üBButton = (Button) findViewById(R.id.ÜbungFilter);
         vLButton = (Button) findViewById(R.id.VorlesungFilter);
         sEButton = (Button) findViewById(R.id.SeminarFilter);
-    }
-
-    /**
-     * constructs full list of Modules from list of .xls file's Row Elements.
-     */
-    public void setUpModulListe(Elements rows) {
-        for (Element row : rows) {
-            Elements cells = row.getElementsByTag("Cell");
-            modulListe.add(makeModul(
-                    cells.get(0).text(),
-                    cells.get(1).text(),
-                    cells.get(2).text(),
-                    cells.get(7).text(),
-                    cells.get(10).text(),
-                    cells.get(11).text(),
-                    cells.get(12).text(),
-                    cells.get(16).text(),
-                    cells.get(19).text()));
-
-        }
-    }
-
-    /**
-     * Generates a Modul instance
-     */
-    public Modul makeModul(String id, String name, String form, String semester, String tag, String von, String bis, String raum, String dozent) {
-        return new Modul(id, name, form, semester, tag, von, bis, raum, dozent);
     }
 
 
@@ -184,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onQueryTextSubmit(String query) {
     currentSearchText =query;
     List<Modul> filtered = Lists.newArrayList();
-        for(Modul m :modulListe) {
+        for(Modul m :HomeScreen.modulListe) {
         if (m.name.contains(query) | m.dozent.contains(query)) {
             if (selectedFilters.contains("all")) {
                 filtered.add(m);
@@ -219,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         
         List<Modul> filtered = Lists.newArrayList();
 
-        for(Modul m : modulListe) {
+        for(Modul m : HomeScreen.modulListe) {
             for(String filter: selectedFilters) {
                 if (m.tag.contains(filter)) {
                     if (currentSearchText == "") {
@@ -241,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         selectedFilters.add(status);
         List<Modul> filtered = Lists.newArrayList();
 
-        for(Modul m : modulListe) {
+        for(Modul m : HomeScreen.modulListe) {
             for(String filter: selectedFilters) {
                 if (m.form.contains(filter)) {
                     if (currentSearchText == "") {
@@ -266,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         lookSelected(allButton);
         searchView.setQuery("",false);
         searchView.clearFocus();
-        adapter = new RecyclerViewAdapter(this, modulListe);
+        adapter = new RecyclerViewAdapter(this, HomeScreen.modulListe);
         recyclerView.swapAdapter(adapter, false);
     }
 
