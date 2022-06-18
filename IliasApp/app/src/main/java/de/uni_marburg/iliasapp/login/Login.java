@@ -31,7 +31,6 @@ public class Login extends AppCompatActivity {
 
         loginRepository = new LoginRepository(new LoginDataSource());
 
-
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
@@ -75,12 +74,10 @@ public class Login extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent moveToHome = new Intent(this, HomeScreen.class);
         startActivity(moveToHome);
-
     }
 
     private void showLoginFailed(String message) {
         Toast.makeText(getApplicationContext(),message , Toast.LENGTH_SHORT).show();
-
     }
 
 }

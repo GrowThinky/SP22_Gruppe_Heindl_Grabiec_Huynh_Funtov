@@ -26,6 +26,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 //import org.apache.poi.ss.usermodel.Workbook;
 //import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -33,6 +34,7 @@ import de.uni_marburg.iliasapp.data.HomeScreen;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, RecyclerViewAdapter.ItemClickListener {
 
+    ModulSearchData modulSearchData;
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
 
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.modulSearchData = new ModulSearchData(getApplicationContext());
 
         initWidget();
         initColor();
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         // set up the RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(this, HomeScreen.modulListe);
+        adapter = new RecyclerViewAdapter(this, modulSearchData.modulListe);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
     }
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onQueryTextSubmit(String query) {
     currentSearchText =query;
     List<Modul> filtered = Lists.newArrayList();
-        for(Modul m :HomeScreen.modulListe) {
+        for(Modul m :modulSearchData.modulListe) {
         if (m.name.contains(query) | m.dozent.contains(query)) {
             if (selectedFilters.contains("all")) {
                 filtered.add(m);
@@ -169,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         
         List<Modul> filtered = Lists.newArrayList();
 
-        for(Modul m : HomeScreen.modulListe) {
+        for(Modul m : modulSearchData.modulListe) {
             for(String filter: selectedFilters) {
                 if (m.tag.contains(filter)) {
                     if (currentSearchText == "") {
@@ -191,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         selectedFilters.add(status);
         List<Modul> filtered = Lists.newArrayList();
 
-        for(Modul m : HomeScreen.modulListe) {
+        for(Modul m : modulSearchData.modulListe) {
             for(String filter: selectedFilters) {
                 if (m.form.contains(filter)) {
                     if (currentSearchText == "") {
@@ -216,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         lookSelected(allButton);
         searchView.setQuery("",false);
         searchView.clearFocus();
-        adapter = new RecyclerViewAdapter(this, HomeScreen.modulListe);
+        adapter = new RecyclerViewAdapter(this, modulSearchData.modulListe);
         recyclerView.swapAdapter(adapter, false);
     }
 

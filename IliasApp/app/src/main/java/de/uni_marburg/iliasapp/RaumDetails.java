@@ -16,6 +16,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 public class RaumDetails extends AppCompatActivity {
     private String raum;
@@ -41,7 +42,7 @@ public class RaumDetails extends AppCompatActivity {
 
         // Liste mit Modulen die in dem gesuchten Raum stattfinden
         List<Modul> raumBelegung = Lists.newArrayList();
-        for(Modul m : HomeScreen.modulListe) {
+        for(Modul m : ModulSearchData.modulListe) {
             if (m.getRaum().contains(raum)) {
                 raumBelegung.add(m);
             }

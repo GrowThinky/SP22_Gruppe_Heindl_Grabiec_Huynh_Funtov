@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerViewAdapter.ItemClickListener {
 
@@ -43,7 +44,7 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
 
         // Liste mit Modulen die in dem gesuchten Raum stattfinden
         List<Modul> ownModul = Lists.newArrayList();
-        for(Modul m : HomeScreen.modulListe) {
+        for(Modul m : ModulSearchData.modulListe) {
                 ownModul.add(m);
         }
         RecyclerView meineModule = findViewById(R.id.recyclerViewMV);
