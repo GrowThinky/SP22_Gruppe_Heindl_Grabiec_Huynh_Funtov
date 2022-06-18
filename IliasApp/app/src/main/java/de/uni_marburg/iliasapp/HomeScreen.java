@@ -23,4 +23,12 @@ public class HomeScreen extends AppCompatActivity {
 
         startActivity(veranstaltungsplanClass);
     }
+    public void buttonKalender(View view) {
+
+
+        //Starte Kalender
+        Intent kalenderClass = new Intent(this, Kalender.class);
+
+        startActivity(kalenderClass);
+    }
 }
