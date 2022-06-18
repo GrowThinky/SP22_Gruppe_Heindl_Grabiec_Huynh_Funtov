@@ -33,7 +33,7 @@ public class LoginDataSource {
         envelope.setOutputSoapObject(request);
         System.out.println(request);
         androidHttpTransport = new HttpTransportSE(URL);
-        androidHttpTransport.setReadTimeout(2000000000);
+        androidHttpTransport.setReadTimeout(200000);
 
         Foo f = new Foo();
         Thread t = new Thread(f);
@@ -47,13 +47,12 @@ public class LoginDataSource {
         System.out.println("we in here!");
 
         if(correctLogin){
-            LoggedInUser fakeUser =
+            LoggedInUser user =
                     new LoggedInUser(
                             f.getResult(),
                             username);
-            return new LoginResult.Success<>(fakeUser);
-
-        } else{
+            return new LoginResult.Success<>(user);
+        } else {
             return new LoginResult.Error(new IOException("Error logging in"));
         }
 
@@ -104,14 +103,14 @@ public class LoginDataSource {
     public class Foo implements Runnable {
         private volatile boolean correctLogin;
         String result;
+        private String sid;
 
         @Override
         public void run() {
             try {
                 androidHttpTransport.call(SOAP_ACTION, envelope);
                  result = (String) envelope.getResponse(); //get response
-                System.out.println(result);
-                correctLogin = true;
+                 correctLogin = true;
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -127,6 +126,10 @@ public class LoginDataSource {
         }
         public String getResult() {
             return result;
+        }
+
+        public void setSid(String sid){
+            this.sid = sid;
         }
     }
 
