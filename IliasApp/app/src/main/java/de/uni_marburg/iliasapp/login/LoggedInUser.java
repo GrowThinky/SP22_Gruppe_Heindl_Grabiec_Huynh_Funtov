@@ -5,16 +5,16 @@ package de.uni_marburg.iliasapp.login;
  */
 public class LoggedInUser {
 
-    private String userId;
+    private String sessionId;
     private String displayName;
 
     public LoggedInUser(String userId, String displayName) {
-        this.userId = userId;
+        this.sessionId = userId;
         this.displayName = displayName;
     }
 
     public String getUserId() {
-        return userId;
+        return sessionId;
     }
 
     public String getDisplayName() {
