@@ -2,15 +2,17 @@ package de.uni_marburg.iliasapp.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import de.uni_marburg.iliasapp.HomeScreen;
+import de.uni_marburg.iliasapp.data.HomeScreen;
 import de.uni_marburg.iliasapp.R;
 import de.uni_marburg.iliasapp.databinding.ActivityLoginBinding;
 
@@ -29,7 +31,6 @@ public class Login extends AppCompatActivity {
 
         loginRepository = new LoginRepository(new LoginDataSource());
 
-
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
@@ -40,7 +41,8 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("hello");
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
@@ -72,12 +74,10 @@ public class Login extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent moveToHome = new Intent(this, HomeScreen.class);
         startActivity(moveToHome);
-
     }
 
     private void showLoginFailed(String message) {
         Toast.makeText(getApplicationContext(),message , Toast.LENGTH_SHORT).show();
-
     }
 
 }

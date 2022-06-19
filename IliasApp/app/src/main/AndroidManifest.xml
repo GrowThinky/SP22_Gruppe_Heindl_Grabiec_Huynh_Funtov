@@ -15,7 +15,23 @@
             android:name=".Kalender"
             android:exported="false" />
         <activity
-            android:name=".HomeScreen"
+            android:name=".RaumDetails"
+            android:exported="false"
+            android:label="@string/raum_details"/>
+        <activity
+            android:name=".Raumsuche"
+            android:exported="false"
+            android:label="@string/raum_suche"/>
+        <activity
+            android:name=".VeranstaltungsDetails"
+            android:exported="false"
+            android:label="@string/veranstaltungs_details"/>
+        <activity
+            android:name=".MeineVeranstaltungen"
+            android:exported="false"
+            android:label="@string/meine_veranstaltungen"/>
+        <activity
+            android:name=".data.HomeScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

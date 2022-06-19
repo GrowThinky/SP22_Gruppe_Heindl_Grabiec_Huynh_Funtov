@@ -5,16 +5,18 @@ public class Modul {
  final public  String id;
  public String name;
  public String form;
+ public String semester;
  public String tag;
  public String startTime;
  public String endTime;
  public String raum;
  public String dozent;
 
- public Modul(String id, String name, String form, String tag, String startTime, String bis, String raum, String dozent){
+ public Modul(String id, String name, String form, String semster, String tag, String startTime, String bis, String raum, String dozent){
      this.id = id;
      this.name = name;
      this.form = form;
+     this.semester = semester;
      this.tag = tag;
      this.startTime = startTime;
      this.endTime = bis;
