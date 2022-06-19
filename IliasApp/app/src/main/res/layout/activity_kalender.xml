@@ -206,22 +206,5 @@
             app:layout_row="15" />
 
 
-        <Button
-            android:id="@+id/Exemplarischer_Button"
-            android:layout_width="30dp"
-            android:layout_height="16dp"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:onClick="creatNewKaldendereintrag"
-            android:padding="0dp"
-            android:text="Button"
-            android:textSize="9dp"
-            android:textStyle="normal"
-            app:iconPadding="0dp"
-            app:layout_column="3"
-            app:layout_row="7"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-
     </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

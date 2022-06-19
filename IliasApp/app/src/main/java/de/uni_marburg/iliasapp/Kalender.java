@@ -19,52 +19,84 @@ public class Kalender extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalender);
-        //creatNewKaldendereintrag("Datenbanken", "10:30", "14:00", "Mi");
-
-
-
+        creatNewKaldendereintrag("Datenbanken", "10:30", "14:30", "Mi");
+        creatNewKaldendereintrag("SUR", "14:30", "15:00", "Mo");
     }
 
-    public void creatNewKaldendereintrag(View view){
-        creatNewKaldendereintrag("Datenbanken", "10:30", "14:00", "Mi");
-    }
+
     private void creatNewKaldendereintrag(String name, String von, String bis, String wochentag) {
-
 
         //Finde Grid
         androidx.gridlayout.widget.GridLayout gridLayout = findViewById(R.id.kalender_grid);
         //Erstelle Button(Kalendereintrag)
         Button button = new Button(this);
-        //Position im Kalender
-        GridLayout.LayoutParams param = new GridLayout.LayoutParams();
-        //Wochentag bestimmen
-       switch(wochentag) {
-            case "Mo": param.columnSpec = GridLayout.spec(2);; break;
-            case "Di": param.columnSpec = GridLayout.spec(3);; break;
-            case "Mi": param.columnSpec = GridLayout.spec(4);; break;
-            case "Do": param.columnSpec = GridLayout.spec(5);; break;
-            case "Fr": param.columnSpec = GridLayout.spec(6);; break;
-            case "Sa": param.columnSpec = GridLayout.spec(7);; break;
-            case "So": param.columnSpec = GridLayout.spec(8);; break;
-        }
-
-
-        //Zeile
-        int ofset = 6; //Bsp. 10 Uhr ist in reihe 3 also 10 - 7
-        int startDesEintrags = Integer.valueOf(von.substring(0,1)) - ofset;
-
         //Button Eigenschafen
+        androidx.gridlayout.widget.GridLayout.LayoutParams param = positionImKalenderfinden(wochentag, von, bis);
         button.setText(name);
-        param.columnSpec = GridLayout.spec(3, 1);
-        param.height = 200;
-        param.width = 500;
-
-
+        param = buttonDesign(param);
+        button = buttonDesign2(button);
         button.setLayoutParams(param);
         //Im Kalender einfügen
        gridLayout.addView(button);
 
     }
-    private void positionImKalenderfinden(){}
+
+
+
+
+    private androidx.gridlayout.widget.GridLayout.LayoutParams positionImKalenderfinden(String wochentag, String von, String bis){
+        //Position im Kalender
+        androidx.gridlayout.widget.GridLayout.LayoutParams param = new androidx.gridlayout.widget.GridLayout.LayoutParams();
+        //Wochentag bestimmen
+        switch(wochentag) {
+            case "Mo": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(1); break;
+            case "Di": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(2); break;
+            case "Mi": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(3); break;
+            case "Do": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(4); break;
+            case "Fr": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(5); break;
+            case "Sa": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(6); break;
+            case "So": param.columnSpec = androidx.gridlayout.widget.GridLayout.spec(7); break;
+        }
+
+        //Start Zeile
+        int ofset = 7; //Bsp. 10 Uhr ist in reihe 3 also 10 - 7
+        int startDesEintrags = Integer.valueOf(von.substring(0,2)) - ofset;
+        param.rowSpec = androidx.gridlayout.widget.GridLayout.spec(startDesEintrags);
+        //Ende Zeile da eine Veranstaltung mehrere Studen gehen kann
+        int endeZeile = Integer.valueOf(bis.substring(0,2)) - Integer.valueOf(von.substring(0,2)) - 1;
+        if(Integer.valueOf(bis.substring(3,5)) > 0)
+            endeZeile++;
+
+        int counter = 0;
+        while (endeZeile > 0){
+            androidx.gridlayout.widget.GridLayout.LayoutParams param2 = new androidx.gridlayout.widget.GridLayout.LayoutParams();; // param2 wird hoch gezählt und param wird später ausgegeben
+            param2.columnSpec = param.columnSpec;
+            endeZeile--;
+            counter++;
+            androidx.gridlayout.widget.GridLayout gridLayout = findViewById(R.id.kalender_grid);
+            Button button = new Button(this);
+            param2.rowSpec = androidx.gridlayout.widget.GridLayout.spec(startDesEintrags + counter);
+            param2 = buttonDesign(param2);
+            button = buttonDesign2(button);
+            button.setLayoutParams(param2);
+            gridLayout.addView(button);
+        }
+
+        return param;
+    }
+    private androidx.gridlayout.widget.GridLayout.LayoutParams buttonDesign(androidx.gridlayout.widget.GridLayout.LayoutParams param){
+        param.height = 200;
+        param.width = 200;
+        param.setMargins(0,0,0,0);
+        return param;
+    }
+    private Button buttonDesign2(Button button){
+        button.setPadding(0,0,0,0);
+        button.setTop(0);
+        button.setBottom(0);
+        button.setAllCaps(false);
+        button.setTextSize(10);
+        return button;
+    }
 
 }
