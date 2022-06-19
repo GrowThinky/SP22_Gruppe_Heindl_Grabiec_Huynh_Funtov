@@ -12,6 +12,12 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.*;
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
+import de.uni_marburg.iliasapp.data.ModulSearchData;
+
 public class Kalender extends AppCompatActivity {
 
 
@@ -21,6 +27,13 @@ public class Kalender extends AppCompatActivity {
         setContentView(R.layout.activity_kalender);
         creatNewKaldendereintrag("Datenbanken", "10:30", "14:30", "Mi");
         creatNewKaldendereintrag("SUR", "14:30", "15:00", "Mo");
+
+        //List<Modul> ownModul = Lists.newArrayList();
+        for(Modul m : ModulSearchData.modulListe) {
+            //ownModul.add(m);
+            //creatNewKaldendereintrag(m.name,m.startTime,m.endTime,m.tag);
+        }
+
     }
 
 
