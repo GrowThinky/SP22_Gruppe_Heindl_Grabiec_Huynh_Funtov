@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import de.uni_marburg.iliasapp.Kalender;
 import de.uni_marburg.iliasapp.MainActivity;
 import de.uni_marburg.iliasapp.MeineVeranstaltungen;
 import de.uni_marburg.iliasapp.Modul;
@@ -65,5 +66,13 @@ public class HomeScreen extends AppCompatActivity {
 
 
         startActivity(meineVeranstaltungsplanClass);
+    }
+
+    public void buttonmKalender(View view) {
+        //Starte Veranstaltungsplan (Main Activity)
+        Intent meineKalenderClass = new Intent(this, Kalender.class);
+
+
+        startActivity(meineKalenderClass);
     }
 }

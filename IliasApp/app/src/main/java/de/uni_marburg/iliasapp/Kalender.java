@@ -36,7 +36,13 @@ public class Kalender extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Erzeugt einen einen Button und fügt ihn im Gridlayout ein
+     * @param name Information aus der API für darüber wie die Veranstaltung heißt
+     * @param von Information aus der API für darüber an welchem Tag die Veranstaltung statfindet
+     * @param bis Information aus der API für darüber zu welcher Stunde die Veranstaltung endet
+     * @param wochentag Information aus der API für darüber an welchem Tag die Veranstaltung statfindet
+     */
     private void creatNewKaldendereintrag(String name, String von, String bis, String wochentag) {
 
         //Finde Grid
@@ -55,8 +61,13 @@ public class Kalender extends AppCompatActivity {
     }
 
 
-
-
+    /**
+     * Findet die Reihe und spalte im Gridlayout für den Button/Kalendereintrag
+     * @param wochentag Information aus der API für darüber an welchem Tag die Veranstaltung statfindet
+     * @param von Information aus der API für darüber zu welcher Stunde die Veranstaltung anfängt
+     * @param bis Information aus der API für darüber zu welcher Stunde die Veranstaltung endet
+     * @return gibt ein Layout wieder der dem Button zugeteilt wird
+     */
     private androidx.gridlayout.widget.GridLayout.LayoutParams positionImKalenderfinden(String wochentag, String von, String bis){
         //Position im Kalender
         androidx.gridlayout.widget.GridLayout.LayoutParams param = new androidx.gridlayout.widget.GridLayout.LayoutParams();
@@ -97,12 +108,24 @@ public class Kalender extends AppCompatActivity {
 
         return param;
     }
+
+    /**
+     * Verändert das aussehen eines Buttons
+     * @param param Layout vom Button
+     * @return verändetes Layout vom Button
+     */
     private androidx.gridlayout.widget.GridLayout.LayoutParams buttonDesign(androidx.gridlayout.widget.GridLayout.LayoutParams param){
         param.height = 200;
         param.width = 200;
         param.setMargins(0,0,0,0);
         return param;
     }
+
+    /**
+     * Verändert das aussehen eines Buttons
+     * @param button der zu verändern ist
+     * @return veränderter Button
+     */
     private Button buttonDesign2(Button button){
         button.setPadding(0,0,0,0);
         button.setTop(0);
