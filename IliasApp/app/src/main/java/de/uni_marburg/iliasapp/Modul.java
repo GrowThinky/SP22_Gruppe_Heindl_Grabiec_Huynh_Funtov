@@ -11,8 +11,11 @@ public class Modul {
  public String endTime;
  public String raum;
  public String dozent;
+ public int course_id;
 
- public Modul(String id, String name, String form, String semster, String tag, String startTime, String bis, String raum, String dozent){
+
+
+    public Modul(String id, String name, String form, String semster, String tag, String startTime, String bis, String raum, String dozent, int course_id){
      this.id = id;
      this.name = name;
      this.form = form;
@@ -22,6 +25,7 @@ public class Modul {
      this.endTime = bis;
      this.raum = raum;
      this.dozent = dozent;
+     this.course_id = course_id;
  }
 
     public String getId() {
@@ -51,6 +55,8 @@ public class Modul {
     public String getRaum() {
         return raum;
     }
+
+    public int getCourse_id() { return course_id;}
 
 
 

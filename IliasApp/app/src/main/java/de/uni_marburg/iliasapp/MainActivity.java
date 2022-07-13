@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         this.modulSearchData = new ModulSearchData(getApplicationContext());
         this.modulApi = new DataAPIRequest(sessionId);
-        System.out.println(modulSearchData.modulListe.get(0).getId().toString());
-        modulApi.makeRequest(modulSearchData.modulListe.get(0).getId().toString());
+
+        modulApi.makeRequest(modulSearchData.modulListe.get(0).getCourse_id());
+
         initWidget();
         initColor();
         lookSelected(allButton);

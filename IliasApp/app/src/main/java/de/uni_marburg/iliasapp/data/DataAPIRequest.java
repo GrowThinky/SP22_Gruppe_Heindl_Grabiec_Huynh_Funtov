@@ -24,11 +24,11 @@ public class DataAPIRequest {
 
     }
 
-        public void makeRequest(String modulId) {
+        public void makeRequest(int course_id) {
 
             request = new SoapObject(NAMESPACE, "getCourseXML");
             request.addProperty("sid", sessionId);
-            request.addProperty("course_id", modulId);
+            request.addProperty("course_id", course_id);
 
 
             envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);

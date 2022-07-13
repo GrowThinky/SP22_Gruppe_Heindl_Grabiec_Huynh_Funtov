@@ -40,24 +40,14 @@ public class ModulSearchData {
         int nrColumns = rows.get(0).getElementsByTag("Cell").size();
 
         setUpModulListe(rows);
-        int i = 0;
-        for(Modul m : modulListe){
-            if(i < 5){
-               System.out.println(m.getName().toString() );
-                System.out.println(m.getId().toString() );
-                System.out.println();
-                i++;
-            } else {
-                break;
-            }
-        }
+
     }
 
     /**
      * Generates a Modul instance
      */
-    public Modul makeModul(String id, String name, String form, String semester, String tag, String von, String bis, String raum, String dozent) {
-        return new Modul(id, name, form, semester, tag, von, bis, raum, dozent);
+    public Modul makeModul(String id, String name, String form, String semester, String tag, String von, String bis, String raum, String dozent, int course_id) {
+        return new Modul(id, name, form, semester, tag, von, bis, raum, dozent, course_id);
     }
 
 
@@ -73,7 +63,9 @@ public class ModulSearchData {
                     cells.get(11).text(),
                     cells.get(12).text(),
                     cells.get(16).text(),
-                    cells.get(19).text()));
+                    cells.get(19).text(),
+                    8174));
+                    //Integer.getInteger(cells.get(4).text() )));
         }
     }
 }

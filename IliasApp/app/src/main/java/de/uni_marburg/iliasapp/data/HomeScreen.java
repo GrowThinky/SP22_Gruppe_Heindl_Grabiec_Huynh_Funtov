@@ -41,15 +41,9 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
-    /**
-     * Generates a Modul instance
-     */
-    public Modul makeModul(String id, String name, String form, String semester, String tag, String von, String bis, String raum, String dozent) {
-        return new Modul(id, name, form, semester, tag, von, bis, raum, dozent);
-    }
+
 
     public void buttonVeranstaltungsplan(View view) {
-
 
         //Starte Veranstaltungsplan (Main Activity)
         Intent veranstaltungsplanClass = new Intent(this, MainActivity.class);
