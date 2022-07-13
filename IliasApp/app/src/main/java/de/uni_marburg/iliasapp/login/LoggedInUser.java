@@ -8,12 +8,13 @@ public class LoggedInUser {
     private String sessionId;
     private String displayName;
 
-    public LoggedInUser(String userId, String displayName) {
-        this.sessionId = userId;
+    public LoggedInUser(String sessionId, String displayName) {
+        this.sessionId = sessionId;
         this.displayName = displayName;
+
     }
 
-    public String getUserId() {
+    public String getSessionId() {
         return sessionId;
     }
 

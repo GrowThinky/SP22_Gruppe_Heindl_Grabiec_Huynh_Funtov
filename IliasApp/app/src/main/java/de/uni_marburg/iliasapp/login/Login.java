@@ -73,6 +73,8 @@ public class Login extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + " " + user.getDisplayName();
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent moveToHome = new Intent(this, HomeScreen.class);
+       System.out.println("yoyo " + user.getDisplayName() + user.getSessionId());
+        moveToHome.putExtra("sid", user.getSessionId());
         startActivity(moveToHome);
     }
 

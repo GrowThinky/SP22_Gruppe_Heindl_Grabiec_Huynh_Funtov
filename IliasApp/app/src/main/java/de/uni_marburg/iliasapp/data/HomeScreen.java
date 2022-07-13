@@ -26,13 +26,16 @@ import de.uni_marburg.iliasapp.Raumsuche;
 public class HomeScreen extends AppCompatActivity {
 
     public static ArrayList<Modul> modulListe = new ArrayList<>();
-
+    Bundle bundle;
+    public String sessionId;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homescreen);
+         bundle = getIntent().getExtras();
+         sessionId = bundle.getString("sid");
 
         AssetManager assetManager = getAssets();
 
@@ -50,7 +53,7 @@ public class HomeScreen extends AppCompatActivity {
 
         //Starte Veranstaltungsplan (Main Activity)
         Intent veranstaltungsplanClass = new Intent(this, MainActivity.class);
-
+        veranstaltungsplanClass.putExtra("sid",sessionId);
         startActivity(veranstaltungsplanClass);
     }
 

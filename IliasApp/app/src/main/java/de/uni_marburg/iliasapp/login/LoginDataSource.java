@@ -2,6 +2,7 @@ package de.uni_marburg.iliasapp.login;
 
 
 import org.ksoap2.SoapEnvelope;
+import org.ksoap2.SoapFault;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
@@ -20,6 +21,7 @@ public class LoginDataSource {
     SoapObject request;
     SoapSerializationEnvelope envelope;
     HttpTransportSE androidHttpTransport;
+    String sid;
 
     public LoginResult<LoggedInUser> login(String username, String password) {
 
@@ -44,9 +46,9 @@ public class LoginDataSource {
             e.printStackTrace();
         }
         Boolean correctLogin = f.getValue();
-        System.out.println("we in here!");
 
-        if(correctLogin){
+
+        if(correctLogin && f.getValue() != null){
             LoggedInUser user =
                     new LoggedInUser(
                             f.getResult(),

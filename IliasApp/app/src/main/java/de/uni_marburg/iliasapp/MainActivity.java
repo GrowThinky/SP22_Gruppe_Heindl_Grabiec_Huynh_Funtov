@@ -1,13 +1,10 @@
 package de.uni_marburg.iliasapp;
 
-import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,16 +13,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.common.collect.Lists;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.DataAPIRequest;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 //import org.apache.poi.ss.usermodel.Workbook;
@@ -35,8 +27,10 @@ import de.uni_marburg.iliasapp.data.ModulSearchData;
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, RecyclerViewAdapter.ItemClickListener {
 
     ModulSearchData modulSearchData;
+    DataAPIRequest modulApi;
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
+    String sessionId;
 
     private Button filterButton;
     private Button moButton, diButton, miButton, doButton, frButton, allButton, üBButton, vLButton, sEButton;
@@ -51,8 +45,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.modulSearchData = new ModulSearchData(getApplicationContext());
+        Bundle bundle = getIntent().getExtras();
+        this.sessionId = bundle.getString("sid");
 
+        this.modulSearchData = new ModulSearchData(getApplicationContext());
+        this.modulApi = new DataAPIRequest(sessionId);
+        System.out.println(modulSearchData.modulListe.get(0).getId().toString());
+        modulApi.makeRequest(modulSearchData.modulListe.get(0).getId().toString());
         initWidget();
         initColor();
         lookSelected(allButton);

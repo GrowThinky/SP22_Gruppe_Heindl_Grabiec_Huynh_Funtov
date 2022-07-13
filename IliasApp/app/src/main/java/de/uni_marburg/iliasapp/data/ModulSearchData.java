@@ -40,6 +40,17 @@ public class ModulSearchData {
         int nrColumns = rows.get(0).getElementsByTag("Cell").size();
 
         setUpModulListe(rows);
+        int i = 0;
+        for(Modul m : modulListe){
+            if(i < 5){
+               System.out.println(m.getName().toString() );
+                System.out.println(m.getId().toString() );
+                System.out.println();
+                i++;
+            } else {
+                break;
+            }
+        }
     }
 
     /**
