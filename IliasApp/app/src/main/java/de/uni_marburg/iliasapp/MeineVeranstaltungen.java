@@ -42,20 +42,21 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
     List itemIds = new ArrayList<>();
     List<String> ownModul;
     ArrayList<Modul> modulesToDisplay = new ArrayList<>();
+    ModulSearchData modulSearchData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meine_veranstaltungen);
+        modulSearchData = new ModulSearchData(getApplicationContext());
 
 
         ownModul = Lists.newArrayList();
         readDatabase();
 
 
-
         for(String modulName : ownModul) {
-            for (Modul m : ModulSearchData.modulListe) {
+            for (Modul m : modulSearchData.modulListe) {
                 if (m.name.equals(modulName)) {
                     modulesToDisplay.add(m);
                     break;
@@ -109,6 +110,7 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
         String sortOrder =
                 FeedReaderContract.FeedEntry.COLUMN_NAME_NAME + " DESC";
 
+        // not being used, just reference for later maybe
         Cursor cursorB = db.query(
                 TABLE_NAME,   // The table to query
                 projection,             // The array of columns to return (pass null to get all)
