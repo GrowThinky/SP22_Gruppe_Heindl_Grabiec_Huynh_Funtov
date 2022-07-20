@@ -5,7 +5,21 @@ import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import java.net.URL;
+import java.io.IOException;
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+
 
 public class DataAPIRequest {
 
@@ -46,15 +60,40 @@ public class DataAPIRequest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Document doc = parseResponse(xml);
+            System.out.println(xml);
+            Node node = doc.getElementsByTagName("Member").item(1);
+            NamedNodeMap attributes = doc.getElementsByTagName("Member").item(0).getAttributes();
 
-            System.out.println("voila: " + xml);
+            System.out.println("voila: " + attributes.item(0).getNodeValue());
+            String user_id = attributes.item(0).getNodeValue().split("_")[3];
+            UserRequest userRequest = new UserRequest(sessionId);
+            userRequest.makeRequest(user_id);
+        }
+
+        public Document parseResponse(String xml){
+
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder;
+            InputSource is;
+            Document doc = null;
+            try {
+                builder = factory.newDocumentBuilder();
+                is = new InputSource(new StringReader(xml));
+                 doc = builder.parse(is);
+                NodeList list = doc.getElementsByTagName("sessionID");
+                //System.out.println(list.item(0).getTextContent());
+            } catch (ParserConfigurationException e) {
+            } catch (SAXException e) {
+            } catch (IOException e) {
+            }
+            return doc;
         }
 
 
 
 
     public class ModulApiRunnable implements Runnable {
-
 
         @Override
         public void run() {

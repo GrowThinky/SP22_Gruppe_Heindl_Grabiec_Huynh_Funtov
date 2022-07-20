@@ -33,7 +33,7 @@ public class LoginDataSource {
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
         envelope.setOutputSoapObject(request);
-        System.out.println(request);
+        // System.out.println(request);
         androidHttpTransport = new HttpTransportSE(URL);
         androidHttpTransport.setReadTimeout(200000);
 
@@ -118,9 +118,7 @@ public class LoginDataSource {
                 System.out.println(e.getClass());
                 correctLogin = false;
             }
-
         }
-
 
         public Boolean getValue() {
             return correctLogin;

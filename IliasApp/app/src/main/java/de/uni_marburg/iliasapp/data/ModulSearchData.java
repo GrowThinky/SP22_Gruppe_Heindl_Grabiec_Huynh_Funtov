@@ -65,7 +65,7 @@ public class ModulSearchData {
                     cells.get(16).text(),
                     cells.get(19).text(),
                     8174));
-                    //Integer.getInteger(cells.get(4).text() )));
+
         }
     }
 }

@@ -1,12 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test.espresso:espresso-core:3.5.0-alpha07@aar">
     <CLASSES>
+<<<<<<< Updated upstream
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1ced148266f1882c0caf02fa147b5a94/transformed/espresso-core-3.5.0-alpha07/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ced148266f1882c0caf02fa147b5a94/transformed/espresso-core-3.5.0-alpha07/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ced148266f1882c0caf02fa147b5a94/transformed/espresso-core-3.5.0-alpha07/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/jars/classes.jar!/" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a25164f76fa06a20c13a449e1658b0f3/transformed/espresso-core-3.5.0-alpha07/AndroidManifest.xml" />
+>>>>>>> Stashed changes
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.5.0-alpha07/2d716c84dd833ca0d193567cd02de76530258cb1/espresso-core-3.5.0-alpha07-javadoc.jar!/" />
