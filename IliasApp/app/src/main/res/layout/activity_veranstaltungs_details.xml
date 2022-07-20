@@ -11,6 +11,7 @@
         android:id="@+id/textName"
         android:layout_width="392dp"
         android:layout_height="88dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewName"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +24,7 @@
         android:id="@+id/textForm"
         android:layout_width="391dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewForm"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,6 +37,7 @@
         android:id="@+id/textTag"
         android:layout_width="391dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewTag"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,6 +50,7 @@
         android:id="@+id/textZeit"
         android:layout_width="391dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewZeit"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,6 +63,7 @@
         android:id="@+id/textRaum"
         android:layout_width="391dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewRaum"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,6 +76,7 @@
         android:id="@+id/textDozent"
         android:layout_width="391dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="8mm"
         android:text="TextViewDozent"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,5 +97,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.666" />
+
+    <Button
+        android:id="@+id/button_Speichern"
+        android:layout_width="192dp"
+        android:layout_height="51dp"
+        android:onClick="buttonSpeichern"
+        android:text="Speichern"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/button_Raumdetails"
+        app:layout_constraintVertical_bias="0.422" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

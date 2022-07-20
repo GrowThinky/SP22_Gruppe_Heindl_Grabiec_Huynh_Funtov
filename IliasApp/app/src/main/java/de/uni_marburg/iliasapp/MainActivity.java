@@ -2,6 +2,7 @@ package de.uni_marburg.iliasapp;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -81,13 +82,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         FeedReaderDbHelper dbHelper = new FeedReaderDbHelper(getApplicationContext());
         // Gets the data repository in write mode
         db = dbHelper.getWritableDatabase();
-        Cursor names = (Cursor) db.rawQuery("PRAGMA table_info(" + "entry" + ")", null);
 
-        String result = cursorToString(names);
-
-        names.close();
-
-        System.out.println(result);
     }
 
     @SuppressLint("Range")
@@ -153,7 +148,16 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "You clicked " + adapter.getItem(position).name + " on row number " + position, Toast.LENGTH_SHORT).show();
-        addToMeineModule(adapter.getItem(position).name,adapter.getItem(position).dozent);
+        Intent detailsVeranstaltungClass = new Intent(this, VeranstaltungsDetails.class);
+        detailsVeranstaltungClass.putExtra("name", adapter.getItem(position).name);
+        detailsVeranstaltungClass.putExtra("form", adapter.getItem(position).form);
+        detailsVeranstaltungClass.putExtra("tag", adapter.getItem(position).tag);
+        detailsVeranstaltungClass.putExtra("start", adapter.getItem(position).startTime);
+        detailsVeranstaltungClass.putExtra("end", adapter.getItem(position).endTime);
+        detailsVeranstaltungClass.putExtra("raum", adapter.getItem(position).raum);
+        detailsVeranstaltungClass.putExtra("dozent", adapter.getItem(position).dozent);
+        detailsVeranstaltungClass.putExtra("semester", adapter.getItem(position).semester);
+        startActivity(detailsVeranstaltungClass);
     }
 
     @Override
@@ -312,13 +316,5 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
 
-public void addToMeineModule(String name,String dozent) {
-    // Create a new map of values, where column names are the keys
-    ContentValues values = new ContentValues();
-    values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_NAME, name);
-    values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_DOZENT, dozent);
 
-    // Insert the new row, returning the primary key value of the new row
-    long newRowId = db.insert(FeedReaderContract.FeedEntry.TABLE_NAME, null, values);
-}
 }

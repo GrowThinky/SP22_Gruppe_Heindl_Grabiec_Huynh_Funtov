@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "DATABASE_NAME";
+    public static final String DATABASE_NAME = "MY_DATABASE";
 
     public FeedReaderDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
