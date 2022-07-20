@@ -43,7 +43,7 @@ public class Kalender extends AppCompatActivity {
      * @param bis Information aus der API für darüber zu welcher Stunde die Veranstaltung endet
      * @param wochentag Information aus der API für darüber an welchem Tag die Veranstaltung statfindet
      */
-    private void creatNewKaldendereintrag(String name, String von, String bis, String wochentag) {
+    public void creatNewKaldendereintrag(String name, String von, String bis, String wochentag) {
 
         //Finde Grid
         androidx.gridlayout.widget.GridLayout gridLayout = findViewById(R.id.kalender_grid);
