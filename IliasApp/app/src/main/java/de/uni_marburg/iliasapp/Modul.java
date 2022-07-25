@@ -15,7 +15,7 @@ public class Modul {
 
 
 
-    public Modul(String id, String name, String form, String semster, String tag, String startTime, String bis, String raum, String dozent, int course_id){
+    public Modul(String id, String name, String form, String semester, String tag, String startTime, String bis, String raum, String dozent, int course_id){
      this.id = id;
      this.name = name;
      this.form = form;

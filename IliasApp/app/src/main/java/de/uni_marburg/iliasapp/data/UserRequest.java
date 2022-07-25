@@ -8,8 +8,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
+/*
+This class was supposed to retrieve user information from students user shares classes with.
+However, apparently we don't have access to that information. It's not being used.
+ */
 public class UserRequest {
-
 
     private final String NAMESPACE = "urn:ilUserAdministration";
     final String SOAP_ACTION = "urn:ilUserAdministration#searchUser";

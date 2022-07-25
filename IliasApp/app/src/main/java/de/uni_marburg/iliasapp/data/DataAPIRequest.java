@@ -20,7 +20,11 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
-
+/*
+This class retrieves Module Infos for a given class from the Ilias API as an XML.
+However, the ilias-test API does not contain any Modules other than "Chat Container".
+So in the end we decided not to use it.
+ */
 public class DataAPIRequest {
 
     private final String NAMESPACE = "urn:ilUserAdministration";
@@ -94,7 +98,6 @@ public class DataAPIRequest {
 
 
     public class ModulApiRunnable implements Runnable {
-
         @Override
         public void run() {
             try {

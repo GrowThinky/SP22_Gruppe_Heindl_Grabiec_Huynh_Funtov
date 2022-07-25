@@ -33,7 +33,7 @@ public class LoginDataSource {
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
         envelope.setOutputSoapObject(request);
-        // System.out.println(request);
+        
         androidHttpTransport = new HttpTransportSE(URL);
         androidHttpTransport.setReadTimeout(200000);
 
@@ -54,7 +54,7 @@ public class LoginDataSource {
                             f.getResult(),
                             username);
             return new LoginResult.Success<>(user);
-
+        // backdoor for test login
         } else if (username.equals("test")){
             LoggedInUser user =
                     new LoggedInUser(
