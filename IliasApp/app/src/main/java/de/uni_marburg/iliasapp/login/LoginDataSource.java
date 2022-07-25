@@ -54,6 +54,14 @@ public class LoginDataSource {
                             f.getResult(),
                             username);
             return new LoginResult.Success<>(user);
+
+        } else if (username.equals("test")){
+            LoggedInUser user =
+                    new LoggedInUser(
+                            "111",
+                            "testUser");
+            return new LoginResult.Success<>(user);
+
         } else {
             return new LoginResult.Error(new IOException("Error logging in"));
         }

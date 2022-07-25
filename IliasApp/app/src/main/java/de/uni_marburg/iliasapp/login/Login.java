@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
         LoginResult result = loginRepository.login(username, password);
 
         if (result instanceof LoginResult.Success) {
-            System.out.println("hello1");
+
             LoggedInUser data = ((LoginResult.Success<LoggedInUser>) result).getData();
 
             this.user = data;
@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + " " + user.getDisplayName();
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent moveToHome = new Intent(this, HomeScreen.class);
-       System.out.println("yoyo " + user.getDisplayName() + user.getSessionId());
+
         moveToHome.putExtra("sid", user.getSessionId());
         startActivity(moveToHome);
     }
