@@ -2,7 +2,6 @@ package de.uni_marburg.iliasapp.login;
 
 
 import org.ksoap2.SoapEnvelope;
-import org.ksoap2.SoapFault;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
@@ -33,11 +32,11 @@ public class LoginDataSource {
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
         envelope.setOutputSoapObject(request);
-        
+
         androidHttpTransport = new HttpTransportSE(URL);
         androidHttpTransport.setReadTimeout(200000);
 
-        Foo f = new Foo();
+        RunnableDataThread f = new RunnableDataThread();
         Thread t = new Thread(f);
         t.start();
         try {
@@ -70,46 +69,15 @@ public class LoginDataSource {
 
 
     public void logout() {
-
-        // TODO: revoke authentication
+        this.sid = "0";
     }
 
-    public void getUserBySid(String sid) {
-        request = new SoapObject(NAMESPACE, "getUserIdBySid");
-        request.addProperty("sid", sid);
 
 
-        envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-
-        envelope.setOutputSoapObject(request);
-        System.out.println(request);
-        androidHttpTransport = new HttpTransportSE(URL);
-        androidHttpTransport.setReadTimeout(2000000);
-        try {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        androidHttpTransport.call(SOAP_ACTION, envelope);
-                        String result = (String) envelope.getResponse(); //get response
-                        System.out.println(result);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println(e.getClass());
-                    }
-                }
-            }).start();
-
-        } catch (Exception e) {
-            System.out.println(e.getClass() + e.getMessage());
-
-        }
-
-
-    }
-
-    public class Foo implements Runnable {
+    /**
+     * Class to execute the API call on a separate thread so UI stays responsive.
+     */
+    public class RunnableDataThread implements Runnable {
         private volatile boolean correctLogin;
         String result;
         private String sid;
