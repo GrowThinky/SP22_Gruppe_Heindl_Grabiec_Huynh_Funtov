@@ -52,7 +52,6 @@ public class DataAPIRequest {
             envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
             envelope.setOutputSoapObject(request);
-            System.out.println(request);
             androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.setReadTimeout(200000);
 

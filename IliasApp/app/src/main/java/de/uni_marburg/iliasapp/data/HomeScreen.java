@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import de.uni_marburg.iliasapp.Kalender;
 import de.uni_marburg.iliasapp.MainActivity;
 import de.uni_marburg.iliasapp.MeineVeranstaltungen;
+import de.uni_marburg.iliasapp.Mensa;
 import de.uni_marburg.iliasapp.Modul;
 import de.uni_marburg.iliasapp.R;
 import de.uni_marburg.iliasapp.Raumsuche;
@@ -71,5 +72,12 @@ public class HomeScreen extends AppCompatActivity {
 
 
         startActivity(meineKalenderClass);
+    }
+    public void buttonmMensa(View view) {
+        //Starte Mensa
+        Intent meineMensaClass = new Intent(this, Mensa.class);
+
+
+        startActivity(meineMensaClass);
     }
 }
