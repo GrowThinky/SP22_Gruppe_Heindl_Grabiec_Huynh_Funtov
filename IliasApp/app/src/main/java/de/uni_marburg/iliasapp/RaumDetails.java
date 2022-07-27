@@ -47,16 +47,22 @@ public class RaumDetails extends AppCompatActivity {
                 raumBelegung.add(m);
             }
         }
+
+        // RecyclerView wird mit Modulen gefüllt die in dem Raum stattfinden
         RecyclerView raum_belegt = findViewById(R.id.raum_belegt);
         raum_belegt.setLayoutManager(new LinearLayoutManager(this));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, raumBelegung);
         raum_belegt.setAdapter(adapter);
     }
 
-    // Zeigt den Raum auf Google Maps an
+    /**
+     * Zeigt den Raum auf Google Maps an
+     */
     public void aufMapsAnzeigen(View view) {
+        // Erzeugt URL mit den Koordinaten des gesuchten Raums
         Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + breitengrad + "," + laengengrad + "(" + raum + ")");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        // Startet Google Maps
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }

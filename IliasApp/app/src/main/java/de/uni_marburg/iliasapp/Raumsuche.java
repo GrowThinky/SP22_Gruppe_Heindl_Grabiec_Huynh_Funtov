@@ -41,6 +41,10 @@ public class Raumsuche extends AppCompatActivity {
         editTextRaum.setText(raumInData_2);
     }
 
+    /**
+     * Eingegebener Raum wird gesucht und zeigt dann die RaumDetails des gesuchten Raums an.
+     * Wenn der gesuchte Raum nicht existiert wird ein Hinweis eingeblendet
+     */
     public void raumsucheStarten(View view) {
         String raum;
         EditText editText = findViewById(R.id.raumsuche);
@@ -54,6 +58,8 @@ public class Raumsuche extends AppCompatActivity {
             Gebaeude tmp = (Gebaeude) iterator.next();
             if (raumNr.equals(tmp.getGebaeudeNr())) {
                 isExists = true;
+
+                // Startet die Activity RaumDetails und gibt die Adresse des Raums mit
                 Intent intent = new Intent(this, RaumDetails.class);
                 intent.putExtra("raum", raum);
                 intent.putExtra("adresse", tmp.getAdresse());
