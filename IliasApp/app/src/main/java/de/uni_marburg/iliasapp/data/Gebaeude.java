@@ -1,4 +1,4 @@
-package de.uni_marburg.iliasapp;
+package de.uni_marburg.iliasapp.data;
 
 public class Gebaeude {
     private String gebaeudeNr;

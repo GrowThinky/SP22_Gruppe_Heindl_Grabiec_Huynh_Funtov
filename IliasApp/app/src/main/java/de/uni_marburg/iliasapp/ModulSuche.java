@@ -1,9 +1,6 @@
 package de.uni_marburg.iliasapp;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,13 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.uni_marburg.iliasapp.data.DataAPIRequest;
-import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
 import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 
 /**
  * Activity for searching and filtering the university's course catalog.
+ * Uses ModulSearchData as source for data to display.
  */
 public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryTextListener, RecyclerViewAdapter.ItemClickListener {
 
@@ -38,14 +35,11 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
     RecyclerViewAdapter adapter;
     String sessionId;
 
-    private Button filterButton;
     private Button moButton, diButton, miButton, doButton, frButton, allButton, üBButton, vLButton, sEButton;
 
     private ArrayList<String> selectedFilters = new ArrayList<String>();
     private String currentSearchText = "";
     private SearchView searchView;
-
-    private SQLiteDatabase db;
 
     private int white, darkGray, blue;
 
@@ -67,9 +61,6 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         selectedFilters.add("all");
 
 
-        // data to populate the RecyclerView with
-        ArrayList<String> results = new ArrayList<>();
-
 
         // set up the RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
@@ -78,30 +69,9 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
-        FeedReaderDbHelper dbHelper = new FeedReaderDbHelper(getApplicationContext());
-        // Gets the data repository in write mode
-        db = dbHelper.getWritableDatabase();
 
     }
 
-    @SuppressLint("Range")
-    public String cursorToString(Cursor cursor){
-        String cursorString = "";
-        if (cursor.moveToFirst() ){
-            String[] columnNames = cursor.getColumnNames();
-            for (String name: columnNames)
-                cursorString += String.format("%s ][ ", name);
-            cursorString += "\n";
-            do {
-                for (String name: columnNames) {
-                    cursorString += String.format("%s ][ ",
-                            cursor.getString(cursor.getColumnIndex(name)));
-                }
-                cursorString += "\n";
-            } while (cursor.moveToNext());
-        }
-        return cursorString;
-    }
 
     private void initColor() {
         white = ContextCompat.getColor(getApplicationContext(), R.color.white);
@@ -165,10 +135,7 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         inflater.inflate(R.menu.search_view, menu);
         final MenuItem searchItem = menu.findItem(R.id.app_bar_search);
         searchView = (SearchView) searchItem.getActionView();
-
-        //searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
         searchView.setOnQueryTextListener(this);
-
 
         return super.onCreateOptionsMenu(menu);
 

@@ -23,7 +23,6 @@ public class VeranstaltungsDetails extends AppCompatActivity {
     private String endInData;
     private String raumInData;
     private String dozentInData;
-    private String semesterInData;
     private SQLiteDatabase db;
     private boolean belegt;
     public Button speichernButton;
