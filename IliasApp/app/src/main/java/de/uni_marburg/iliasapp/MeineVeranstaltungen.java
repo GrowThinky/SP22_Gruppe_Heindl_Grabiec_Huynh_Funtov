@@ -3,13 +3,11 @@ package de.uni_marburg.iliasapp;
 import static de.uni_marburg.iliasapp.data.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,21 +17,13 @@ import android.widget.Toast;
 
 import com.google.common.collect.Lists;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import de.uni_marburg.iliasapp.data.FeedReaderContract;
 import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
-import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
-import de.uni_marburg.iliasapp.data.FeedReaderContract;
 
 public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerViewAdapter.ItemClickListener {
 

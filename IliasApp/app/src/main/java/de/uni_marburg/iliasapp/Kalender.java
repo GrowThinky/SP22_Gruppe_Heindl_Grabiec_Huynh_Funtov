@@ -3,19 +3,9 @@ package de.uni_marburg.iliasapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.LinearLayout;
-import android.widget.*;
 
-import com.google.common.collect.Lists;
-
-import java.util.List;
-
+import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 public class Kalender extends AppCompatActivity {

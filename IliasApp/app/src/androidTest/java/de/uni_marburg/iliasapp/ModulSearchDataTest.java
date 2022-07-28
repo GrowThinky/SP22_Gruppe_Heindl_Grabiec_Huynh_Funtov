@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 /**

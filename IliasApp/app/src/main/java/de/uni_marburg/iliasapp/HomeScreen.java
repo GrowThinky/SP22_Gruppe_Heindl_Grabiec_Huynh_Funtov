@@ -1,4 +1,4 @@
-package de.uni_marburg.iliasapp.data;
+package de.uni_marburg.iliasapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,13 +9,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import de.uni_marburg.iliasapp.Kalender;
-import de.uni_marburg.iliasapp.ModulSuche;
-import de.uni_marburg.iliasapp.MeineVeranstaltungen;
-import de.uni_marburg.iliasapp.Mensa;
-import de.uni_marburg.iliasapp.Modul;
-import de.uni_marburg.iliasapp.R;
-import de.uni_marburg.iliasapp.Raumsuche;
+import de.uni_marburg.iliasapp.data.Modul;
 
 public class HomeScreen extends AppCompatActivity {
 

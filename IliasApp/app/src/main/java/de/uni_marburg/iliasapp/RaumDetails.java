@@ -9,13 +9,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.common.collect.Lists;
 
 import java.util.List;
 
-import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 public class RaumDetails extends AppCompatActivity {

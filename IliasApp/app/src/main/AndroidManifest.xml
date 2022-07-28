@@ -34,7 +34,7 @@
             android:exported="false"
             android:label="@string/meine_veranstaltungen" />
         <activity
-            android:name=".data.HomeScreen"
+            android:name=".HomeScreen"
             android:exported="false" />
         <activity
             android:name=".ModulSuche"

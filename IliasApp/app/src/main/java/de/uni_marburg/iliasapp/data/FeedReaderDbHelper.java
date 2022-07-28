@@ -4,7 +4,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
+/**
+ * Uses methods in SQLiteOpenHelper for managing the database.
+ * Operations of creating and updating the database are only performed when needed and not
+ * during app startup.
+ */
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;

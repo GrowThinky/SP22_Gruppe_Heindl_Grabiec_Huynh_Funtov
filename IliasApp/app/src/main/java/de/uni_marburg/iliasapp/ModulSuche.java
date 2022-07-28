@@ -1,7 +1,6 @@
 package de.uni_marburg.iliasapp;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.uni_marburg.iliasapp.data.DataAPIRequest;
-import de.uni_marburg.iliasapp.data.FeedReaderContract;
 import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
+import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
 

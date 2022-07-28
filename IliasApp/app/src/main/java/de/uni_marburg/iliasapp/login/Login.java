@@ -12,10 +12,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import de.uni_marburg.iliasapp.data.HomeScreen;
+import de.uni_marburg.iliasapp.HomeScreen;
 import de.uni_marburg.iliasapp.R;
 import de.uni_marburg.iliasapp.databinding.ActivityLoginBinding;
 
+/**
+ * Displays the Login-Screen, passes username and password on to LoginRepository
+ * and updates UI with userdata, if login is successful.
+ */
 public class Login extends AppCompatActivity {
 
     private ActivityLoginBinding binding;

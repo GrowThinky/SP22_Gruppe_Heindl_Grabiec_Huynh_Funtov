@@ -2,7 +2,6 @@ package de.uni_marburg.iliasapp.data;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.os.Bundle;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,9 +11,6 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import de.uni_marburg.iliasapp.Modul;
-import de.uni_marburg.iliasapp.R;
 
 /**
  *
