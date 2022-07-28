@@ -27,11 +27,11 @@ import de.uni_marburg.iliasapp.data.FeedReaderContract;
 import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
 
-//import org.apache.poi.ss.usermodel.Workbook;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-// html webscrapper // jsoup  txt
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, RecyclerViewAdapter.ItemClickListener {
+/**
+ * Activity for searching and filtering the university's course catalog.
+ */
+public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryTextListener, RecyclerViewAdapter.ItemClickListener {
 
     ModulSearchData modulSearchData;
     DataAPIRequest modulApi;

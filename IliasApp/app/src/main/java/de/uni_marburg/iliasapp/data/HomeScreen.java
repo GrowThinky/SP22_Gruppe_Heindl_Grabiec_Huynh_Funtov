@@ -7,17 +7,10 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import de.uni_marburg.iliasapp.Kalender;
-import de.uni_marburg.iliasapp.MainActivity;
+import de.uni_marburg.iliasapp.ModulSuche;
 import de.uni_marburg.iliasapp.MeineVeranstaltungen;
 import de.uni_marburg.iliasapp.Mensa;
 import de.uni_marburg.iliasapp.Modul;
@@ -47,7 +40,7 @@ public class HomeScreen extends AppCompatActivity {
     public void buttonVeranstaltungsplan(View view) {
 
         //Starte Veranstaltungsplan (Main Activity)
-        Intent veranstaltungsplanClass = new Intent(this, MainActivity.class);
+        Intent veranstaltungsplanClass = new Intent(this, ModulSuche.class);
         veranstaltungsplanClass.putExtra("sid",sessionId);
         startActivity(veranstaltungsplanClass);
     }

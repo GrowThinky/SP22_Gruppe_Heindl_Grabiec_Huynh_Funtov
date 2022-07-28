@@ -13,6 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**
+ * The Adapter class gets data from the datasource and passes it into the ViewHolder.
+ * When a view scrolls off screen, RecyclerView reuses it and fills it with new data.
+ * This makes the app more efficient.
+ */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<Modul> mData;
