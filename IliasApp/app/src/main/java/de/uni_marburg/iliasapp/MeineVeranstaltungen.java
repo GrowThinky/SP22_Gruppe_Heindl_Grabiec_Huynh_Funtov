@@ -43,17 +43,28 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
     List<String> ownModul;
     ArrayList<Modul> modulesToDisplay = new ArrayList<>();
     ModulSearchData modulSearchData;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setUpActivity();
+    }
+
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        modulesToDisplay.clear();
+        setUpActivity();
+    }
+
+    private void setUpActivity() {
         setContentView(R.layout.activity_meine_veranstaltungen);
         modulSearchData = new ModulSearchData(getApplicationContext());
 
-
         ownModul = Lists.newArrayList();
         readDatabase();
-
 
         for(String modulName : ownModul) {
             for (Modul m : modulSearchData.modulListe) {
@@ -69,12 +80,17 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
         adapterM = new RecyclerViewAdapter(this, modulesToDisplay);
         adapterM .setClickListener(this);
         meineModule.setAdapter(adapterM);
+        if(modulesToDisplay.isEmpty()){
+            showEmptyListMessage();
+        }
+    }
 
+    private void showEmptyListMessage(){
+        Toast.makeText(this, "Nothing to show", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "You clicked " + adapterM.getItem(position).name + " on row number " + position, Toast.LENGTH_SHORT).show();
         Intent detailsVeranstaltungClass = new Intent(this, VeranstaltungsDetails.class);
         detailsVeranstaltungClass.putExtra("name", adapterM.getItem(position).name);
         detailsVeranstaltungClass.putExtra("form", adapterM.getItem(position).form);
@@ -84,13 +100,17 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
         detailsVeranstaltungClass.putExtra("raum", adapterM.getItem(position).raum);
         detailsVeranstaltungClass.putExtra("dozent", adapterM.getItem(position).dozent);
         detailsVeranstaltungClass.putExtra("semester", adapterM.getItem(position).semester);
+        detailsVeranstaltungClass.putExtra("belegt", true);
         startActivity(detailsVeranstaltungClass);
     }
+
+
+
 
     public void readDatabase(){
 
         FeedReaderDbHelper dbHelper = new FeedReaderDbHelper(getApplicationContext());
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        db = dbHelper.getReadableDatabase();
 
         Cursor  cursor = db.rawQuery("select * from " + TABLE_NAME,null);
 

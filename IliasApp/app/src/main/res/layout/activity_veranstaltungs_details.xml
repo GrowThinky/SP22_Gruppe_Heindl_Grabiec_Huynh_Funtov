@@ -102,7 +102,6 @@
         android:id="@+id/button_Speichern"
         android:layout_width="192dp"
         android:layout_height="51dp"
-        android:onClick="buttonSpeichern"
         android:text="Speichern"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

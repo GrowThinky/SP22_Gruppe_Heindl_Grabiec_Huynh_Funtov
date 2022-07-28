@@ -147,7 +147,6 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "You clicked " + adapter.getItem(position).name + " on row number " + position, Toast.LENGTH_SHORT).show();
         Intent detailsVeranstaltungClass = new Intent(this, VeranstaltungsDetails.class);
         detailsVeranstaltungClass.putExtra("name", adapter.getItem(position).name);
         detailsVeranstaltungClass.putExtra("form", adapter.getItem(position).form);
@@ -157,6 +156,7 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         detailsVeranstaltungClass.putExtra("raum", adapter.getItem(position).raum);
         detailsVeranstaltungClass.putExtra("dozent", adapter.getItem(position).dozent);
         detailsVeranstaltungClass.putExtra("semester", adapter.getItem(position).semester);
+        detailsVeranstaltungClass.putExtra("belegt", false);
         startActivity(detailsVeranstaltungClass);
     }
 
