@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IliasApp.iml" filepath="$PROJECT_DIR$/.idea/modules/IliasApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/IliasApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/IliasApp.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/IliasApp.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/IliasApp.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/IliasApp.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/IliasApp.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/IliasApp.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/IliasApp.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.iml" filepath="$PROJECT_DIR$/.idea/modules/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SP22_GruppeA_Funtov_Grabiec_Heindl_Huynh.IliasApp.app.androidTest.iml" />
