@@ -8,8 +8,6 @@ import android.webkit.WebView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
-
 public class Mensa extends AppCompatActivity {
 
     @Override
