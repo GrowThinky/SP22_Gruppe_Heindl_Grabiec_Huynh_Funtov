@@ -54,7 +54,7 @@ public class Raumsuche extends AppCompatActivity {
             Toast.makeText(this, "Eingabe ist leer.", Toast.LENGTH_LONG).show();
             return;
         }
-        
+
         String raumNr = raum.substring(0, 4);
         Iterator iterator = gebaeude.iterator();
         boolean isExists = false;
