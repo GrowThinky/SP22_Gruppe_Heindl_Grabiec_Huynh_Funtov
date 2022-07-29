@@ -1,4 +1,4 @@
-package de.uni_marburg.iliasapp.login;
+package de.uni_marburg.iliasapp;
 
 
 import static androidx.test.espresso.Espresso.onView;
@@ -27,6 +27,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import de.uni_marburg.iliasapp.R;
+import de.uni_marburg.iliasapp.login.Login;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
