@@ -49,9 +49,17 @@ public class Raumsuche extends AppCompatActivity {
         String raum;
         EditText editText = findViewById(R.id.raumsuche);
         raum = editText.getText().toString();
+
+        if (raum.trim().length() == 0){
+            Toast.makeText(this, "Eingabe ist leer.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        
         String raumNr = raum.substring(0, 4);
         Iterator iterator = gebaeude.iterator();
         boolean isExists = false;
+
+
 
         // Prüft, ob der eingegebene Raum vorhanden ist
         while(iterator.hasNext() && !isExists) {
