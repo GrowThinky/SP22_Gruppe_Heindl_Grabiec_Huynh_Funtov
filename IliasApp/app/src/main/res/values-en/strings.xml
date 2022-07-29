@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IliasApp</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="module_search">Module Search</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Strings auf der Startseite -->
+    <string name="raumplan">Roomplan</string>
+    <string name="meine_veranstaltungen">My Modules</string>
+    <string name="veranstaltungsplan">Modules</string>
+    <string name="campus_app">Campus App</string>
+    <string name="veranstaltungs_details">Details of Modules</string>
+    <string name="maps_anzeigen">Show Maps</string>
+    <string name="room_search">Search Room</string>
+    <string name="search">Search</string>
+    <string name="raumdetails">Roomdetails</string>
+    <string name="raum_suche">Room Search</string>
+    <string name="mo">Mo</string>
+    <string name="fr">Fr</string>
+    <string name="sa">Sa</string>
+    <string name="so">Su</string>
+    <string name="Mensa">Cantine</string>
+    <string name="sprache_ndern">Change language</string>
+    <string name="Raum">Room</string>
+    <string name="Adresse">address:</string>
+    <string name="dieser_raum_ist_in_den_folgenden_zeitr_umen_bereits_belegt">This room is already occupied on following terms</string>
+    <string name="all">All</string>
+    <string name="b">EX</string>
+    <string name="se">SE</string>
+    <string name="spracheWahl">Choose a Language</string>
+    <string name="deutsch">German</string>
+    <string name="englisch">English</string>
+    <string name="Name">Name of Module:</string>
+    <string name="Form">Form of Module:</string>
+    <string name="von">from:</string>
+    <string name="raum">room:</string>
+    <string name="zeit">oClock:</string>
+    <string name="dozent">Prof:</string>
+    <string name="speichern">save</string>
+    <string name="entfernen">delete</string>
+    <string name="vorlesungskalender">Calendar</string>
+    <string name="raum_details">Room Details</string>
+    <string name="di">Tu</string>
+    <string name="mi">W</string>
+    <string name="doo">Th</string>
+    <string name="vl">LE</string>
+    <string name="aktuell">currently</string>
+    <string name="tag">takes place on:</string>
+    <string name="bis">to</string>
+
+    />
+</resources>

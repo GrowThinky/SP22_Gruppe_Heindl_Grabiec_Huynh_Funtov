@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort</string>
+    <string name="action_sign_in">Anmelden oder regestrieren</string>
+    <string name="action_sign_in_short">Anmelden</string>
+    <string name="welcome">Willkommen</string>
+    <string name="invalid_username">Kein gültiger Anmeldename!</string>
+    <string name="invalid_password">Das Passwort ist zu kurz!</string>
+    <string name="module_search">Modul Suche</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Strings auf der Startseite -->
+    <string name="vorlesungskalender">Vorlesungskalender</string>
+    <string name="raumplan">Raumplan</string>
+    <string name="meine_veranstaltungen">Meine Veranstaltungen</string>
+    <string name="veranstaltungsplan">Veranstaltungsplan</string>
+    <string name="campus_app">Campus App</string>
+    <string name="veranstaltungs_details">Veranstaltungsdetails</string>
+    <string name="maps_anzeigen">Maps anzeigen</string>
+    <string name="room_search">Raum suchen</string>
+    <string name="search">Suche</string>
+    <string name="raumdetails">Raumdetails</string>
+    <string name="raum_suche">Raumsuche</string>
+    <string name="raum_details">Raumdetails</string>
+    <string name="mo">Mo</string>
+    <string name="di">Di</string>
+    <string name="mi">Mi</string>
+    <string name="doo">Do</string>
+    <string name="fr">Fr</string>
+    <string name="sa">Sa</string>
+    <string name="so">So</string>
+    <string name="login_failed">Lo</string>
+    <string name="Mensa">Mensa</string>
+    <string name="sprache_ndern">Sprache ändern</string>
+    <string name="Raum">Raum</string>
+    <string name="Adresse">Adresse:</string>
+    <string name="dieser_raum_ist_in_den_folgenden_zeitr_umen_bereits_belegt">Dieser Raum ist in den folgenden Zeiträumen bereits belegt:</string>
+    <string name="all">All</string>
+    <string name="vl">VL</string>
+    <string name="b">ÜB</string>
+    <string name="se">SE</string>
+    <string name="aktuell">Aktuell</string>
+    <string name="spracheWahl">Wähle eine Sprache</string>
+    <string name="deutsch">Deutsch</string>
+    <string name="englisch">Englisch</string>
+    <string name="Name">Name der Veranstaltung:</string>
+    <string name="Form">Veranstaltungsform:</string>
+    <string name="tag">Findet statt am:</string>
+    <string name="von">Findet statt von:</string>
+    <string name="raum">Findet statt in Raum:</string>
+    <string name="zeit">Uhr</string>
+    <string name="dozent">Verantwortlicher:</string>
+    <string name="speichern">Speichern</string>
+    <string name="entfernen">Entfernen</string>
+    <string name="bis">bis</string>
+    />
+</resources>
