@@ -1,14 +1,14 @@
 package de.uni_marburg.iliasapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.common.collect.Lists;
 
@@ -35,9 +35,9 @@ public class RaumDetails extends AppCompatActivity {
         laengengrad = intent.getStringExtra("laengengrad");
 
         TextView raumNr = findViewById(R.id.raum_nr);
-        raumNr.setText("Raum: " + raum);
+        raumNr.setText(getString(R.string.Raum) + raum);
         TextView adresseVomRaum = findViewById(R.id.adresse);
-        adresseVomRaum.setText("Adresse: " + adresse);
+        adresseVomRaum.setText(getString(R.string.Adresse) + adresse);
 
         // Liste mit Modulen die in dem gesuchten Raum stattfinden
         List<Modul> raumBelegung = Lists.newArrayList();

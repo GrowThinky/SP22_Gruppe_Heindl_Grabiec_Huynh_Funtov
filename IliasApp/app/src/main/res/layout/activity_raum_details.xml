@@ -21,7 +21,7 @@
         android:layout_width="298dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
-        android:text="Dieser Raum ist in den folgenden Zeiträumen bereits belegt:"
+        android:text="@string/dieser_raum_ist_in_den_folgenden_zeitr_umen_bereits_belegt"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="All"
+            android:text="@string/all"
             android:backgroundTint="#3F51B5"
             android:onClick="allFilterTrapped"/>
 
@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mo"
+            android:text="@string/mo"
             android:backgroundTint="#3F51B5"
             android:onClick="MoFilterTrapped"/>
 
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Di"
+            android:text="@string/di"
             android:backgroundTint="#3F51B5"
             android:onClick="DiFilterTrapped"/>
 
@@ -45,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mi"
+            android:text="@string/mi"
             android:backgroundTint="#3F51B5"
             android:onClick="MiFilterTrapped"/>
 
@@ -54,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Do"
+            android:text="@string/doo"
             android:backgroundTint="#3F51B5"
             android:onClick="DoFilterTrapped"/>
 
@@ -63,7 +63,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Fr"
+            android:text="@string/fr"
             android:backgroundTint="#3F51B5"
             android:onClick="FrFilterTrapped"/>
 
@@ -79,7 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="VL"
+            android:text="@string/vl"
             android:backgroundTint="#3F51B5"
             android:onClick="VLFilterTrapped"/>
 
@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="ÜB"
+            android:text="@string/b"
             android:backgroundTint="#3F51B5"
             android:onClick="ÜBFilterTrapped"/>
 
@@ -99,7 +99,7 @@
             android:layout_weight="1"
             android:backgroundTint="#3F51B5"
             android:onClick="SEFilterTrapped"
-            android:text="SE" />
+            android:text="@string/se" />
 
         <Button
             android:id="@+id/AktuellFilter"
@@ -108,7 +108,7 @@
             android:layout_weight="1"
             android:backgroundTint="#3F51B5"
             android:onClick="AktuellFilterTrapped"
-            android:text="Aktuell"
+            android:text="@string/aktuell"
             android:textSize="12sp" />
 
 

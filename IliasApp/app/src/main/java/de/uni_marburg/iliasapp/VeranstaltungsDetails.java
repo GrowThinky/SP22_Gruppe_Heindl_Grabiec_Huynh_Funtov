@@ -1,7 +1,5 @@
 package de.uni_marburg.iliasapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,9 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import de.uni_marburg.iliasapp.data.FeedReaderContract;
 import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
-
+/*
+Die Klasse repräsentiert die Veranstaltungsdetails eines Moduls
+ */
 public class VeranstaltungsDetails extends AppCompatActivity {
 
     private String nameInData;
@@ -57,27 +59,27 @@ public class VeranstaltungsDetails extends AppCompatActivity {
 
     private void setTextfieldVeranstaltungDetails() {
         TextView textfieldname = findViewById(R.id.textName);
-        textfieldname.setText("Name der Veranstaltung: " + "\n" + nameInData);
+        textfieldname.setText(getString(R.string.Name) + "\n" + nameInData);
 
         TextView textfieldform = findViewById(R.id.textForm);
-        textfieldform.setText("Veranstaltungsform: " + "\n" + formInData);
+        textfieldform.setText(getString(R.string.Form) + "\n" + formInData);
 
         TextView textfieldtag = findViewById(R.id.textTag);
-        textfieldtag.setText("Findet statt am: " + "\n" + tagInData);
+        textfieldtag.setText(getString(R.string.tag) + "\n" + tagInData);
 
         TextView textfieldzeit = findViewById(R.id.textZeit);
-        textfieldzeit.setText("Findet statt von: " + "\n" + startInData +" bis " + endInData + " Uhr" );
+        textfieldzeit.setText(getString(R.string.von) + "\n" + startInData +getString(R.string.bis) + endInData + getString(R.string.zeit) );
 
         TextView textfieldraum = findViewById(R.id.textRaum);
-        textfieldraum.setText("Findet statt in Raum: " + "\n" + raumInData);
+        textfieldraum.setText(getString(R.string.raum) + "\n" + raumInData);
 
         TextView textfielddozent = findViewById(R.id.textDozent);
-        textfielddozent.setText("Verantwortlicher: " + "\n" + dozentInData);
+        textfielddozent.setText(getString(R.string.dozent) + "\n" + dozentInData);
 
         speichernButton = findViewById(R.id.button_Speichern);
 
         if(belegt){
-            speichernButton.setText("Entfernen");
+            speichernButton.setText(R.string.entfernen);
             speichernButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     deleteFromMeineModule(nameInData);
@@ -87,7 +89,7 @@ public class VeranstaltungsDetails extends AppCompatActivity {
             });
 
         } else {
-            speichernButton.setText("Speichern");
+            speichernButton.setText(R.string.speichern);
             speichernButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     addToMeineModule(nameInData,dozentInData);

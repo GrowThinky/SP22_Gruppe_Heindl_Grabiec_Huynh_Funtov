@@ -72,13 +72,13 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
 
     }
 
-
+    //Farbe für Filterbutton
     private void initColor() {
         white = ContextCompat.getColor(getApplicationContext(), R.color.white);
         darkGray = ContextCompat.getColor(getApplicationContext(), R.color.darkerGray);
         blue = ContextCompat.getColor(getApplicationContext(), R.color.blue);
     }
-
+    //Methode, damit alle Filter als "nicht ausgewählt" angezeigt werden
     private void unselectedAllFilterButton() {
         lookUnSelected(allButton);
         lookUnSelected(moButton);
@@ -91,16 +91,19 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         lookUnSelected(sEButton);
     }
 
+    //Aussehen der Filter, wenn sie ausgewählt sind
     private void lookSelected(Button parsedButton) {
         parsedButton.setTextColor(white);
         parsedButton.setBackgroundColor(darkGray);
     }
 
+    //Aussehen der Filter, wenn sie nicht ausgewählt sind
     private void lookUnSelected(Button parsedButton) {
         parsedButton.setTextColor(white);
         parsedButton.setBackgroundColor(blue);
     }
 
+    //Button initialisieren
     private void initWidget() {
         allButton = (Button) findViewById(R.id.allFilter);
         moButton = (Button) findViewById(R.id.MoFilter);
@@ -116,6 +119,7 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
 
     @Override
     public void onItemClick(View view, int position) {
+        //Daten an Veranstlatungsdetails weitergeben
         Intent detailsVeranstaltungClass = new Intent(this, VeranstaltungsDetails.class);
         detailsVeranstaltungClass.putExtra("name", adapter.getItem(position).name);
         detailsVeranstaltungClass.putExtra("form", adapter.getItem(position).form);
@@ -131,6 +135,7 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //Suchleiste
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_view, menu);
         final MenuItem searchItem = menu.findItem(R.id.app_bar_search);
@@ -141,6 +146,11 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
 
     }
 
+    /**
+     * Funktion um nach Veranstaltungen und Dozenten zu suchen
+     * @param query Suchbegriff
+     * @return
+     */
     @Override
     public boolean onQueryTextSubmit(String query) {
     currentSearchText =query;
@@ -173,18 +183,24 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         return false;
     }
 
-
+    /**
+     * Methode, um Veranstaltungen nach Wochentage zu filtern
+     * @param status gedrückter Button (Mo, Di, Mi...)
+     */
     private void filterListTag(String status){
         if(status != null && !selectedFilters.contains(status))
             selectedFilters.add(status);
         
         List<Modul> filtered = Lists.newArrayList();
-
+        //Durch Module laufen
         for(Modul m : modulSearchData.modulListe) {
+            //durch Filter laufen
             for(String filter: selectedFilters) {
+                //wenn bereits Suchbegriff existiert (damit beides gleichzeitig funktioniert)
                 if (m.tag.contains(filter)) {
                     if (currentSearchText == "") {
                         filtered.add(m);
+                        //wenn kein Suchbegriff exisitiert
                     } else {
                         if (m.name.contains(currentSearchText) | m.dozent.contains(currentSearchText)) {
                             filtered.add(m);
@@ -197,6 +213,10 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         recyclerView.swapAdapter(adapter, false);
     }
 
+    /**
+     * Methode um Module nach ihrer Form zu Filtern
+     * @param status Button Form (VL, ÜB, SE)
+     */
     private void filterListForm(String status){
         if(status != null && !selectedFilters.contains(status))
         selectedFilters.add(status);
@@ -219,11 +239,15 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         recyclerView.swapAdapter(adapter, false);
     }
 
+    //wenn Filter auf ALLE steht
     public void allFilterTrapped(View view) {
+        //alle Filter löschen
         selectedFilters.clear();
+        //nur "Filter" all ausgewählt
         selectedFilters.add("all");
-        
+        //alle filter ändern Anischt auf "nicht ausgewählt"
         unselectedAllFilterButton();
+        //all filter ändert Anischt auf "ausgewählt"
         lookSelected(allButton);
         searchView.setQuery("",false);
         searchView.clearFocus();
@@ -231,8 +255,11 @@ public class ModulSuche extends AppCompatActivity implements SearchView.OnQueryT
         recyclerView.swapAdapter(adapter, false);
     }
 
+    //folgende Filter, wenn Mo, Di, Mi... usw. gedrückt wurden
     public void MoFilterTrapped(View view) {
+        //Methode wird ausgeführt
         filterListTag("Mo");
+        //Ansicht der Button wird geändert
         selectFilter(moButton);
     }
 

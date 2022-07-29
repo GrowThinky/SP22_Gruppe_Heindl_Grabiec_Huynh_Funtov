@@ -2,10 +2,6 @@ package de.uni_marburg.iliasapp;
 
 import static de.uni_marburg.iliasapp.data.FeedReaderContract.FeedEntry.TABLE_NAME;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +10,10 @@ import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.common.collect.Lists;
 
@@ -24,7 +24,9 @@ import de.uni_marburg.iliasapp.data.FeedReaderContract;
 import de.uni_marburg.iliasapp.data.FeedReaderDbHelper;
 import de.uni_marburg.iliasapp.data.Modul;
 import de.uni_marburg.iliasapp.data.ModulSearchData;
-
+/*
+In MeineVeranstaltungen kann man auf seine Veranstaltungen zugreifen nachdem man diese über "Veranstaltungsdetails gespeichert hat
+ */
 public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerViewAdapter.ItemClickListener {
 
 
@@ -65,6 +67,7 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
             }
         }
 
+        //Recycler View für Module
         RecyclerView meineModule = findViewById(R.id.recyclerViewMV);
         meineModule.setLayoutManager(new LinearLayoutManager(this));
         adapterM = new RecyclerViewAdapter(this, modulesToDisplay);
@@ -81,6 +84,7 @@ public class MeineVeranstaltungen extends AppCompatActivity implements RecyclerV
 
     @Override
     public void onItemClick(View view, int position) {
+        //Weitergabe der Daten an Veranstaltungsdetails
         Intent detailsVeranstaltungClass = new Intent(this, VeranstaltungsDetails.class);
         detailsVeranstaltungClass.putExtra("name", adapterM.getItem(position).name);
         detailsVeranstaltungClass.putExtra("form", adapterM.getItem(position).form);
