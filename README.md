@@ -1,9 +1,14 @@
-
-
-
-<img src="screenshot1.png" alt="Main_Menu" width="200"/>
-<img src="screenshot2.png" alt="Main_Menu" width="200"/>
-<img src="screenshot3.png" alt="Main_Menu" width="200"/>
+ <div class="row">
+  <div class="column">
+    <img src="screenshot1.png" alt="Main_Menu" width="200">
+  </div>
+  <div class="column">
+    <img src="screenshot2.png" alt="Modul_Information" width="200">
+  </div>
+  <div class="column">
+    <img src="screenshot3.png" alt="Map" width="200">
+  </div>
+</div> 
 
 
 
