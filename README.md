@@ -1,9 +1,8 @@
 
-## 0. Screenshots 
-![screenshot1](screenshot0.png "Login")
-![screenshot1](screenshot1.png "Main_Menu")
-![screenshot1](screenshot2.png "Modul_Informationen")
-![screenshot1](screenshot3.png "Map")
+
+
+<img src="screenshot1.png" alt="Main_Menu" width="200"/>
+
 
 
 ## 1. Kurzbeschreibung der Komponenten
