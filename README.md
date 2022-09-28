@@ -10,6 +10,10 @@
   </div>
 </div> 
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+<img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200">
+
 
 
 
