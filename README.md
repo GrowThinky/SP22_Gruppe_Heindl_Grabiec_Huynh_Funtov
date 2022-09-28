@@ -1,5 +1,5 @@
 
-Main Menu             |  Search for Classes | Navigation to Uni Buildings
+Select Features            |  Search for Classes | Navigate on Campus
 :-------------------------:|:-------------------------: |:-------------------------:
 <img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200"> | <img src="screenshot3.png" alt="Map" width="200">
 
