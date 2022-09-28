@@ -9,6 +9,7 @@ Select Features            |  Search for Classes | Navigate on Campus
 
 ## 1. Kurzbeschreibung der Komponenten
  **1.1. Login-Package:**
+ 
 Für den Login-Prozess wurde eine Abwandlung des (sehr komplizierten) Android Studio Templates für Login-Activities verwendet.
 
 - **Login** :
@@ -24,8 +25,10 @@ Modelliert einen validen Nutzer mit Nutzerdaten und einer validen Session ID.
 Modelliert einen erfolgreichen oder nicht erfolgreichen Login-Versuch über die Subklassen (1) Success die ein LoggedInUser Objekt verwaltet und (2) Error, die eine Exception als Begründung für den Fehlschlag beinhaltet.
 
 **1.2. Data-Package:**
+
 Um die Datenverwaltung von den Android Activities mit der Darstellung und Programmlogik etwas zu trennen, haben wir eine separate Klassenstruktur für die Datenverwaltung implementiert, die installiert werden kann um an den benötigten stellen leichter wiederverwendet werden zu können.
 - **ModulSearchData**:
+
 Datenhaltungsklasse, welche die Modulinformationen von der Modulliste.xls mithilfe von JSoup einliest und aus jeder Zeile eine Modul-Instanz erzeugt.
 - **Modul**:
 Modelliert ein Modul im Veranstaltungskatalog.
