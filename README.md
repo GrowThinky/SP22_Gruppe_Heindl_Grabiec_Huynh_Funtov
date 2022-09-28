@@ -1,18 +1,7 @@
- <div class="row" display= "inline">
-  <div class="column" display= "inline">
-    <img src="screenshot1.png" alt="Main_Menu" width="200" >
-  </div>
-  <div class="column" display= "inline">
-    <img src="screenshot2.png" alt="Modul_Information" width="200">
-  </div>
-  <div class="column" display= "inline">
-    <img src="screenshot3.png" alt="Map" width="200">
-  </div>
-</div> 
 
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
-<img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200">
+Main Menu             |  Search for Classes | Navigation to Uni Buildings
+:-------------------------:|:-------------------------: |:-------------------------:
+<img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200"> | <img src="screenshot3.png" alt="Map" width="200">
 
 
 
