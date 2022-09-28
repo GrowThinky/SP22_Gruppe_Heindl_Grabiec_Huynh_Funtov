@@ -23,7 +23,7 @@ Modelliert einen validen Nutzer mit Nutzerdaten und einer validen Session ID.
 - **LoginResult**:
 Modelliert einen erfolgreichen oder nicht erfolgreichen Login-Versuch über die Subklassen (1) Success die ein LoggedInUser Objekt verwaltet und (2) Error, die eine Exception als Begründung für den Fehlschlag beinhaltet.
 
-## 1.2. Data-Package:
+** 1.2. Data-Package: **
 Um die Datenverwaltung von den Android Activities mit der Darstellung und Programmlogik etwas zu trennen, haben wir eine separate Klassenstruktur für die Datenverwaltung implementiert, die installiert werden kann um an den benötigten stellen leichter wiederverwendet werden zu können.
 - **ModulSearchData**:
 Datenhaltungsklasse, welche die Modulinformationen von der Modulliste.xls mithilfe von JSoup einliest und aus jeder Zeile eine Modul-Instanz erzeugt.
@@ -40,7 +40,7 @@ Legt die Struktur der DatenBank für gespeicherte Module fest.
 - **FeedReaderDbHelper**:
 Subklasse von SQLiteOpenHelper. Stellt sicher, dass Operationen wie die Erzeugung und Update der Datenbank nur ausgeführt werden, wenn nötig und nicht beim Start der App.
 
-## 1.3. Zentrale Android Activities:
+** 1.3. Zentrale Android Activities: **
 - **HomeScreen**:
 Hauptmenü — stellt Buttons für alle Funktionsbereiche der App dar.
 - **Modulsuche**:
