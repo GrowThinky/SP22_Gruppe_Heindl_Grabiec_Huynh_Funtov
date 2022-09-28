@@ -27,9 +27,8 @@ Modelliert einen erfolgreichen oder nicht erfolgreichen Login-Versuch über die 
 **1.2. Data-Package:**
 
 Um die Datenverwaltung von den Android Activities mit der Darstellung und Programmlogik etwas zu trennen, haben wir eine separate Klassenstruktur für die Datenverwaltung implementiert, die installiert werden kann um an den benötigten stellen leichter wiederverwendet werden zu können.
-- **ModulSearchData**:
 
-Datenhaltungsklasse, welche die Modulinformationen von der Modulliste.xls mithilfe von JSoup einliest und aus jeder Zeile eine Modul-Instanz erzeugt.
+- **ModulSearchData**: Datenhaltungsklasse, welche die Modulinformationen von der Modulliste.xls mithilfe von JSoup einliest und aus jeder Zeile eine Modul-Instanz erzeugt.
 - **Modul**:
 Modelliert ein Modul im Veranstaltungskatalog.
 - **Gebäude**:
