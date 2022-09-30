@@ -3,7 +3,8 @@ Select Features            |  Search for Classes | Navigate on Campus
 :-------------------------:|:-------------------------: |:-------------------------:
 <img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200"> | <img src="screenshot3.png" alt="Map" width="200">
 
-
+Running Instructions:
+If you don't have a university account you can simply enter "test" as username.
 
 ## 1. Kurzbeschreibung der Komponenten
 
