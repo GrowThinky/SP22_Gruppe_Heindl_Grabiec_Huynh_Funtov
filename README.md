@@ -4,7 +4,7 @@ Select Features            |  Search for Classes | Navigate on Campus
 <img src="screenshot1.png" alt="Main_Menu" width="200" >  |  <img src="screenshot2.png" alt="Modul_Information" width="200"> | <img src="screenshot3.png" alt="Map" width="200">
 
 
-## :
+## Instructions:
 The app was developed during a software internship at the University of Marburg and some functionalities use mock-data.
 You can log in with your students username and password. If you don't have a university account you can simply enter "test" as username.
 
